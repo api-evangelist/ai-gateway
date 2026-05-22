@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-schema/ai-gateway-route-schema.json",
+  "title": "AIGatewayRoute",
+  "description": "A single model route defined on an AI gateway. A route binds an inbound matcher (model alias, header, identity, path) to one or more upstream LLM provider backends, with optional caching, fallback, fanout, rate limiting, budget, and guardrail policy attached.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique route name within the gateway.",
+      "example": "primary-llm"
+    },
+    "modelAlias": {
+      "type": "string",
+      "description": "Client-facing model alias the gateway exposes; resolved to one or more upstream models.",
+      "example": "gpt-4o-primary"
+    },
+    "matchers": {
+      "type": "array",
+      "description": "Inbound matchers — header, model name, path, identity, or content-based conditions that select this route.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["header", "model", "path", "identity", "time", "content"]
+          },
+          "key": { "type": "string" },
+          "value": { "type": "string" }
+        },
+        "required": ["type"]
+      }
+    },
+    "backends": {
+      "type": "array",
+      "description": "One or more upstream provider backends serving this route. Multiple backends enable fallback or fanout depending on strategy.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string",
+            "description": "The LLM provider identifier (slug) — see provider schema.",
+            "example": "openai"
+          },
+          "model": {
+            "type": "string",
+            "description": "Provider-side model identifier.",
+            "example": "gpt-4o-2024-08-06"
+          },
+          "weight": {
+            "type": "integer",
+            "description": "Load-balancing weight; higher means more traffic.",
+            "example": 100
+          },
+          "priority": {
+            "type": "integer",
+            "description": "Fallback priority; lower wins.",
+            "example": 1
+          },
+          "credentialRef": {
+            "type": "string",
+            "description": "Reference to a stored upstream API key or secret.",
+            "example": "openai-prod"
+          }
+        },
+        "required": ["provider", "model"]
+      },
+      "minItems": 1
+    },
+    "strategy": {
+      "type": "string",
+      "description": "How the gateway selects among multiple backends.",
+      "enum": ["fallback", "load-balance", "fanout", "shadow", "cost-optimized", "latency-optimized"],
+      "example": "fallback"
+    },
+    "cache": {
+      "type": "object",
+      "description": "Response caching configuration for this route.",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["off", "exact", "semantic"],
+          "example": "semantic"
+        },
+        "ttlSeconds": { "type": "integer", "example": 3600 },
+        "similarityThreshold": {
+          "type": "number",
+          "description": "Cosine similarity threshold for semantic-cache hits.",
+          "example": 0.95
+        }
+      }
+    },
+    "rateLimit": {
+      "type": "object",
+      "description": "Per-route rate limits enforced at the gateway.",
+      "properties": {
+        "requestsPerMinute": { "type": "integer", "example": 600 },
+        "tokensPerMinute": { "type": "integer", "example": 200000 },
+        "concurrency": { "type": "integer", "example": 32 }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "description": "Spend caps applied to this route.",
+      "properties": {
+        "currency": { "type": "string", "example": "USD" },
+        "limit": { "type": "number", "example": 500.0 },
+        "period": {
+          "type": "string",
+          "enum": ["daily", "weekly", "monthly"],
+          "example": "monthly"
+        },
+        "action": {
+          "type": "string",
+          "enum": ["alert", "throttle", "block"],
+          "example": "block"
+        }
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "description": "Guardrail policies applied to inbound prompts and outbound completions on this route.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "example": "pii-redaction" },
+          "stage": {
+            "type": "string",
+            "enum": ["request", "response", "both"],
+            "example": "both"
+          },
+          "policyRef": {
+            "type": "string",
+            "description": "Reference to a policy defined in the policy schema."
+          }
+        },
+        "required": ["name", "stage"]
+      }
+    },
+    "retries": {
+      "type": "object",
+      "properties": {
+        "attempts": { "type": "integer", "example": 3 },
+        "perTryTimeout": { "type": "string", "example": "30s" }
+      }
+    },
+    "observability": {
+      "type": "object",
+      "description": "Where this route emits telemetry.",
+      "properties": {
+        "openTelemetry": { "type": "boolean", "example": true },
+        "langfuse": { "type": "boolean", "example": false },
+        "logRequestBody": { "type": "boolean", "example": false }
+      }
+    },
+    "tenant": {
+      "type": "string",
+      "description": "Logical tenant or team owning this route.",
+      "example": "platform"
+    }
+  },
+  "required": ["name", "backends"]
+}

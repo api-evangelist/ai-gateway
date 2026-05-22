@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-structure/ai-gateway-provider-structure.json",
+  "name": "AIGatewayProvider",
+  "description": "An LLM provider backend registered with an AI gateway, including identity, API base URL, wire-format compatibility, authentication, and exposed models.",
+  "type": "object",
+  "properties": {
+    "providerId": {
+      "type": "string",
+      "description": "Stable slug for the provider.",
+      "example": "openai"
+    },
+    "displayName": {
+      "type": "string",
+      "example": "OpenAI"
+    },
+    "kind": {
+      "type": "string",
+      "description": "Provider category.",
+      "example": "llm"
+    },
+    "baseUrl": {
+      "type": "uri",
+      "example": "https://api.openai.com/v1"
+    },
+    "apiCompatibility": {
+      "type": "string",
+      "description": "Wire format the gateway speaks to this provider.",
+      "example": "openai"
+    },
+    "authentication": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "example": "bearer" },
+        "byok": { "type": "boolean", "example": true },
+        "secretRef": { "type": "string", "example": "openai-prod-key" }
+      }
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "gpt-4o-2024-08-06" },
+          "family": { "type": "string", "example": "gpt-4o" },
+          "contextWindow": { "type": "int32", "example": 128000 },
+          "capabilities": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "pricing": {
+            "type": "object",
+            "properties": {
+              "inputPerMillionTokens": { "type": "float", "example": 2.5 },
+              "outputPerMillionTokens": { "type": "float", "example": 10.0 },
+              "currency": { "type": "string", "example": "USD" }
+            }
+          }
+        }
+      }
+    },
+    "region": { "type": "string", "example": "us-east-1" },
+    "status": { "type": "string", "example": "active" }
+  },
+  "required": ["providerId", "kind", "apiCompatibility"]
+}

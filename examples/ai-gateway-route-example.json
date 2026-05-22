@@ -1,0 +1,65 @@
+{
+  "name": "primary-llm",
+  "modelAlias": "gpt-4o-primary",
+  "matchers": [
+    {
+      "type": "header",
+      "key": "x-model-alias",
+      "value": "gpt-4o-primary"
+    }
+  ],
+  "backends": [
+    {
+      "provider": "openai",
+      "model": "gpt-4o-2024-08-06",
+      "weight": 100,
+      "priority": 1,
+      "credentialRef": "openai-prod"
+    },
+    {
+      "provider": "azure-openai",
+      "model": "gpt-4o",
+      "weight": 100,
+      "priority": 2,
+      "credentialRef": "azure-prod-eastus"
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5",
+      "weight": 100,
+      "priority": 3,
+      "credentialRef": "anthropic-prod"
+    }
+  ],
+  "strategy": "fallback",
+  "cache": {
+    "mode": "semantic",
+    "ttlSeconds": 3600,
+    "similarityThreshold": 0.95
+  },
+  "rateLimit": {
+    "requestsPerMinute": 600,
+    "tokensPerMinute": 200000,
+    "concurrency": 32
+  },
+  "budget": {
+    "currency": "USD",
+    "limit": 500.0,
+    "period": "monthly",
+    "action": "block"
+  },
+  "guardrails": [
+    { "name": "pii-redaction", "stage": "both", "policyRef": "pii-redaction-default" },
+    { "name": "prompt-injection-guard", "stage": "request", "policyRef": "prompt-injection-block" }
+  ],
+  "retries": {
+    "attempts": 3,
+    "perTryTimeout": "30s"
+  },
+  "observability": {
+    "openTelemetry": true,
+    "langfuse": true,
+    "logRequestBody": false
+  },
+  "tenant": "platform-eng"
+}

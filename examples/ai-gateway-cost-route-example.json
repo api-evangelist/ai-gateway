@@ -1,0 +1,29 @@
+{
+  "name": "cost-optimized-chat",
+  "modelAlias": "cheap-chat",
+  "matchers": [
+    { "type": "header", "key": "x-tier", "value": "free" }
+  ],
+  "backends": [
+    { "provider": "openai", "model": "gpt-4o-mini", "weight": 70, "priority": 1, "credentialRef": "openai-prod" },
+    { "provider": "google-gemini", "model": "gemini-2.5-flash", "weight": 30, "priority": 1, "credentialRef": "gemini-prod" },
+    { "provider": "openai", "model": "gpt-4o-2024-08-06", "weight": 100, "priority": 2, "credentialRef": "openai-prod" }
+  ],
+  "strategy": "cost-optimized",
+  "cache": {
+    "mode": "semantic",
+    "ttlSeconds": 86400,
+    "similarityThreshold": 0.92
+  },
+  "rateLimit": {
+    "requestsPerMinute": 60,
+    "tokensPerMinute": 30000
+  },
+  "budget": {
+    "currency": "USD",
+    "limit": 50.0,
+    "period": "monthly",
+    "action": "block"
+  },
+  "tenant": "consumer-app"
+}

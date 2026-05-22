@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-structure/ai-gateway-route-structure.json",
+  "name": "AIGatewayRoute",
+  "description": "A single model route on an AI gateway, binding a client-facing alias and matchers to upstream provider backends with caching, fallback, fanout, rate limit, budget, and guardrail policy.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique route name within the gateway.",
+      "example": "primary-llm"
+    },
+    "modelAlias": {
+      "type": "string",
+      "description": "Client-facing model alias the gateway exposes.",
+      "example": "gpt-4o-primary"
+    },
+    "matchers": {
+      "type": "array",
+      "description": "Inbound matchers selecting this route.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string", "example": "header" },
+          "key": { "type": "string", "example": "x-model-alias" },
+          "value": { "type": "string", "example": "primary-llm" }
+        }
+      }
+    },
+    "backends": {
+      "type": "array",
+      "description": "One or more upstream provider backends serving this route.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "provider": { "type": "string", "example": "openai" },
+          "model": { "type": "string", "example": "gpt-4o-2024-08-06" },
+          "weight": { "type": "int32", "example": 100 },
+          "priority": { "type": "int32", "example": 1 },
+          "credentialRef": { "type": "string", "example": "openai-prod" }
+        }
+      }
+    },
+    "strategy": {
+      "type": "string",
+      "description": "How the gateway selects among multiple backends.",
+      "example": "fallback"
+    },
+    "cache": {
+      "type": "object",
+      "properties": {
+        "mode": { "type": "string", "example": "semantic" },
+        "ttlSeconds": { "type": "int32", "example": 3600 },
+        "similarityThreshold": { "type": "float", "example": 0.95 }
+      }
+    },
+    "rateLimit": {
+      "type": "object",
+      "properties": {
+        "requestsPerMinute": { "type": "int32", "example": 600 },
+        "tokensPerMinute": { "type": "int32", "example": 200000 },
+        "concurrency": { "type": "int32", "example": 32 }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "currency": { "type": "string", "example": "USD" },
+        "limit": { "type": "float", "example": 500.0 },
+        "period": { "type": "string", "example": "monthly" },
+        "action": { "type": "string", "example": "block" }
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "example": "pii-redaction" },
+          "stage": { "type": "string", "example": "both" },
+          "policyRef": { "type": "string", "example": "pii-redaction-default" }
+        }
+      }
+    },
+    "tenant": {
+      "type": "string",
+      "description": "Logical tenant owning this route.",
+      "example": "platform"
+    }
+  },
+  "required": ["name", "backends"]
+}

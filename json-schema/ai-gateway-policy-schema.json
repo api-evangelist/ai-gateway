@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-schema/ai-gateway-policy-schema.json",
+  "title": "AIGatewayPolicy",
+  "description": "A reusable AI gateway policy describing a guardrail, cost control, rate limit, or governance rule. Policies are attached to routes, tenants, or virtual keys to enforce content, cost, and access controls across LLM traffic.",
+  "type": "object",
+  "properties": {
+    "policyId": {
+      "type": "string",
+      "example": "pii-redaction-default"
+    },
+    "name": {
+      "type": "string",
+      "example": "PII Redaction"
+    },
+    "kind": {
+      "type": "string",
+      "description": "Category of policy.",
+      "enum": ["guardrail", "cost", "rate-limit", "access", "data-residency", "audit", "transformation"],
+      "example": "guardrail"
+    },
+    "stage": {
+      "type": "string",
+      "description": "Where this policy runs in the request lifecycle.",
+      "enum": ["request", "response", "both", "background"],
+      "example": "both"
+    },
+    "scope": {
+      "type": "string",
+      "description": "What this policy applies to.",
+      "enum": ["global", "tenant", "team", "route", "virtual-key", "user"],
+      "example": "tenant"
+    },
+    "guardrail": {
+      "type": "object",
+      "description": "Guardrail-specific configuration when kind=guardrail.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["pii", "prompt-injection", "jailbreak", "toxicity", "topic", "regex", "moderation", "secret-detection", "custom-webhook"],
+          "example": "pii"
+        },
+        "categories": {
+          "type": "array",
+          "items": { "type": "string" },
+          "example": ["ssn", "email", "phone", "credit-card"]
+        },
+        "action": {
+          "type": "string",
+          "enum": ["allow", "redact", "block", "warn", "log-only"],
+          "example": "redact"
+        },
+        "engine": {
+          "type": "string",
+          "description": "Underlying engine implementing the guardrail.",
+          "example": "presidio"
+        }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "description": "Cost-control configuration when kind=cost.",
+      "properties": {
+        "limit": { "type": "number", "example": 1000.0 },
+        "currency": { "type": "string", "example": "USD" },
+        "period": {
+          "type": "string",
+          "enum": ["daily", "weekly", "monthly", "annual"],
+          "example": "monthly"
+        },
+        "action": {
+          "type": "string",
+          "enum": ["alert", "throttle", "block"],
+          "example": "block"
+        }
+      }
+    },
+    "rateLimit": {
+      "type": "object",
+      "description": "Rate-limit configuration when kind=rate-limit.",
+      "properties": {
+        "requestsPerMinute": { "type": "integer", "example": 600 },
+        "tokensPerMinute": { "type": "integer", "example": 200000 },
+        "concurrency": { "type": "integer", "example": 32 }
+      }
+    },
+    "access": {
+      "type": "object",
+      "description": "Access-control configuration when kind=access.",
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": { "type": "string" },
+          "example": ["platform-admin", "ai-developer"]
+        },
+        "allowedModels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "deniedModels": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "dataResidency": {
+      "type": "object",
+      "description": "Data-residency configuration when kind=data-residency.",
+      "properties": {
+        "allowedRegions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "example": ["us-east-1", "us-west-2"]
+        },
+        "deniedProviders": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "description": "Audit-logging configuration when kind=audit.",
+      "properties": {
+        "logRequestBody": { "type": "boolean", "example": true },
+        "logResponseBody": { "type": "boolean", "example": true },
+        "retentionDays": { "type": "integer", "example": 90 },
+        "sink": { "type": "string", "example": "s3://ai-audit-logs/prod" }
+      }
+    },
+    "enabled": {
+      "type": "boolean",
+      "example": true
+    }
+  },
+  "required": ["policyId", "kind", "stage", "scope"]
+}

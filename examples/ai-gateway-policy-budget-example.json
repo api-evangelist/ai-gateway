@@ -1,0 +1,14 @@
+{
+  "policyId": "monthly-team-budget",
+  "name": "Monthly Team Budget",
+  "kind": "cost",
+  "stage": "request",
+  "scope": "team",
+  "cost": {
+    "limit": 2000.0,
+    "currency": "USD",
+    "period": "monthly",
+    "action": "throttle"
+  },
+  "enabled": true
+}

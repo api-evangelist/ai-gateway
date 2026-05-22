@@ -1,0 +1,313 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aigw": "https://api-evangelist.github.io/ai-gateway/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "AIGateway": "aigw:AIGateway",
+    "AIGatewayRoute": "aigw:AIGatewayRoute",
+    "AIGatewayProvider": "aigw:AIGatewayProvider",
+    "AIGatewayPolicy": "aigw:AIGatewayPolicy",
+    "AIModel": "aigw:AIModel",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "displayName": "schema:name",
+
+    "providerId": {
+      "@id": "aigw:provider_id",
+      "@type": "xsd:string"
+    },
+    "modelAlias": {
+      "@id": "aigw:model_alias",
+      "@type": "xsd:string"
+    },
+    "model": {
+      "@id": "aigw:model",
+      "@type": "xsd:string"
+    },
+    "provider": {
+      "@id": "aigw:provider",
+      "@type": "xsd:string"
+    },
+    "kind": {
+      "@id": "aigw:kind",
+      "@type": "xsd:string"
+    },
+    "baseUrl": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "apiCompatibility": {
+      "@id": "aigw:api_compatibility",
+      "@type": "xsd:string"
+    },
+    "authentication": {
+      "@id": "aigw:authentication",
+      "@type": "@id"
+    },
+    "byok": {
+      "@id": "aigw:byok",
+      "@type": "xsd:boolean"
+    },
+    "secretRef": {
+      "@id": "aigw:secret_ref",
+      "@type": "xsd:string"
+    },
+    "credentialRef": {
+      "@id": "aigw:credential_ref",
+      "@type": "xsd:string"
+    },
+    "models": {
+      "@id": "aigw:models",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "family": {
+      "@id": "aigw:model_family",
+      "@type": "xsd:string"
+    },
+    "contextWindow": {
+      "@id": "aigw:context_window",
+      "@type": "xsd:integer"
+    },
+    "capabilities": {
+      "@id": "aigw:capabilities",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "pricing": {
+      "@id": "aigw:pricing",
+      "@type": "@id"
+    },
+    "inputPerMillionTokens": {
+      "@id": "aigw:input_per_million_tokens",
+      "@type": "xsd:decimal"
+    },
+    "outputPerMillionTokens": {
+      "@id": "aigw:output_per_million_tokens",
+      "@type": "xsd:decimal"
+    },
+    "currency": {
+      "@id": "aigw:currency",
+      "@type": "xsd:string"
+    },
+    "matchers": {
+      "@id": "aigw:matchers",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "backends": {
+      "@id": "aigw:backends",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "strategy": {
+      "@id": "aigw:strategy",
+      "@type": "xsd:string"
+    },
+    "cache": {
+      "@id": "aigw:cache",
+      "@type": "@id"
+    },
+    "mode": {
+      "@id": "aigw:cache_mode",
+      "@type": "xsd:string"
+    },
+    "ttlSeconds": {
+      "@id": "aigw:ttl_seconds",
+      "@type": "xsd:integer"
+    },
+    "similarityThreshold": {
+      "@id": "aigw:similarity_threshold",
+      "@type": "xsd:decimal"
+    },
+    "rateLimit": {
+      "@id": "aigw:rate_limit",
+      "@type": "@id"
+    },
+    "requestsPerMinute": {
+      "@id": "aigw:requests_per_minute",
+      "@type": "xsd:integer"
+    },
+    "tokensPerMinute": {
+      "@id": "aigw:tokens_per_minute",
+      "@type": "xsd:integer"
+    },
+    "concurrency": {
+      "@id": "aigw:concurrency",
+      "@type": "xsd:integer"
+    },
+    "budget": {
+      "@id": "aigw:budget",
+      "@type": "@id"
+    },
+    "limit": {
+      "@id": "aigw:limit",
+      "@type": "xsd:decimal"
+    },
+    "period": {
+      "@id": "aigw:period",
+      "@type": "xsd:string"
+    },
+    "action": {
+      "@id": "aigw:action",
+      "@type": "xsd:string"
+    },
+    "guardrails": {
+      "@id": "aigw:guardrails",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "stage": {
+      "@id": "aigw:stage",
+      "@type": "xsd:string"
+    },
+    "policyRef": {
+      "@id": "aigw:policy_ref",
+      "@type": "xsd:string"
+    },
+    "policyId": {
+      "@id": "aigw:policy_id",
+      "@type": "xsd:string"
+    },
+    "scope": {
+      "@id": "aigw:scope",
+      "@type": "xsd:string"
+    },
+    "guardrail": {
+      "@id": "aigw:guardrail",
+      "@type": "@id"
+    },
+    "type": {
+      "@id": "aigw:type",
+      "@type": "xsd:string"
+    },
+    "categories": {
+      "@id": "aigw:categories",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "engine": {
+      "@id": "aigw:engine",
+      "@type": "xsd:string"
+    },
+    "cost": {
+      "@id": "aigw:cost",
+      "@type": "@id"
+    },
+    "access": {
+      "@id": "aigw:access",
+      "@type": "@id"
+    },
+    "roles": {
+      "@id": "aigw:roles",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "allowedModels": {
+      "@id": "aigw:allowed_models",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "deniedModels": {
+      "@id": "aigw:denied_models",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "dataResidency": {
+      "@id": "aigw:data_residency",
+      "@type": "@id"
+    },
+    "allowedRegions": {
+      "@id": "aigw:allowed_regions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "deniedProviders": {
+      "@id": "aigw:denied_providers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "audit": {
+      "@id": "aigw:audit",
+      "@type": "@id"
+    },
+    "logRequestBody": {
+      "@id": "aigw:log_request_body",
+      "@type": "xsd:boolean"
+    },
+    "logResponseBody": {
+      "@id": "aigw:log_response_body",
+      "@type": "xsd:boolean"
+    },
+    "retentionDays": {
+      "@id": "aigw:retention_days",
+      "@type": "xsd:integer"
+    },
+    "sink": {
+      "@id": "aigw:sink",
+      "@type": "xsd:string"
+    },
+    "retries": {
+      "@id": "aigw:retries",
+      "@type": "@id"
+    },
+    "attempts": {
+      "@id": "aigw:attempts",
+      "@type": "xsd:integer"
+    },
+    "perTryTimeout": {
+      "@id": "aigw:per_try_timeout",
+      "@type": "xsd:string"
+    },
+    "observability": {
+      "@id": "aigw:observability",
+      "@type": "@id"
+    },
+    "openTelemetry": {
+      "@id": "aigw:open_telemetry",
+      "@type": "xsd:boolean"
+    },
+    "langfuse": {
+      "@id": "aigw:langfuse",
+      "@type": "xsd:boolean"
+    },
+    "tenant": {
+      "@id": "aigw:tenant",
+      "@type": "xsd:string"
+    },
+    "region": {
+      "@id": "aigw:region",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "aigw:status",
+      "@type": "xsd:string"
+    },
+    "weight": {
+      "@id": "aigw:weight",
+      "@type": "xsd:integer"
+    },
+    "priority": {
+      "@id": "aigw:priority",
+      "@type": "xsd:integer"
+    },
+    "enabled": {
+      "@id": "aigw:enabled",
+      "@type": "xsd:boolean"
+    },
+    "deploymentModel": {
+      "@id": "aigw:deployment_model",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "license": {
+      "@id": "schema:license",
+      "@type": "xsd:string"
+    }
+  }
+}

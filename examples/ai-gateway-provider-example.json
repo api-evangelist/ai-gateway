@@ -1,0 +1,53 @@
+{
+  "providerId": "openai",
+  "displayName": "OpenAI",
+  "kind": "llm",
+  "baseUrl": "https://api.openai.com/v1",
+  "apiCompatibility": "openai",
+  "authentication": {
+    "type": "bearer",
+    "byok": true,
+    "secretRef": "openai-prod-key"
+  },
+  "models": [
+    {
+      "id": "gpt-4o-2024-08-06",
+      "family": "gpt-4o",
+      "contextWindow": 128000,
+      "capabilities": ["chat", "tool-use", "json-mode", "vision"],
+      "pricing": {
+        "inputPerMillionTokens": 2.5,
+        "outputPerMillionTokens": 10.0,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "gpt-4o-mini",
+      "family": "gpt-4o",
+      "contextWindow": 128000,
+      "capabilities": ["chat", "tool-use", "json-mode"],
+      "pricing": {
+        "inputPerMillionTokens": 0.15,
+        "outputPerMillionTokens": 0.6,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": "text-embedding-3-large",
+      "family": "embeddings",
+      "contextWindow": 8191,
+      "capabilities": ["embedding"],
+      "pricing": {
+        "inputPerMillionTokens": 0.13,
+        "outputPerMillionTokens": 0.0,
+        "currency": "USD"
+      }
+    }
+  ],
+  "region": "global",
+  "rateLimits": {
+    "requestsPerMinute": 10000,
+    "tokensPerMinute": 2000000
+  },
+  "status": "active"
+}

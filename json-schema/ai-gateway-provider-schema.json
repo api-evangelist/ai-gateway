@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-schema/ai-gateway-provider-schema.json",
+  "title": "AIGatewayProvider",
+  "description": "A description of an LLM provider backend registered with an AI gateway. Captures provider identity, API base URL, authentication, supported model families, and BYOK posture.",
+  "type": "object",
+  "properties": {
+    "providerId": {
+      "type": "string",
+      "description": "Stable slug for the provider.",
+      "example": "openai"
+    },
+    "displayName": {
+      "type": "string",
+      "example": "OpenAI"
+    },
+    "kind": {
+      "type": "string",
+      "description": "What kind of provider this is.",
+      "enum": ["llm", "embeddings", "vision", "audio", "image", "video", "rerank", "moderation", "self-hosted"],
+      "example": "llm"
+    },
+    "baseUrl": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://api.openai.com/v1"
+    },
+    "apiCompatibility": {
+      "type": "string",
+      "description": "The wire format the gateway speaks to this provider.",
+      "enum": ["openai", "anthropic", "google-gemini", "cohere", "bedrock", "vertex", "ollama", "vllm", "native"],
+      "example": "openai"
+    },
+    "authentication": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["bearer", "apikey", "basic", "iam", "service-account", "none"],
+          "example": "bearer"
+        },
+        "byok": {
+          "type": "boolean",
+          "description": "True when the gateway holds the customer's own API key for this provider.",
+          "example": true
+        },
+        "secretRef": {
+          "type": "string",
+          "example": "openai-prod-key"
+        }
+      },
+      "required": ["type"]
+    },
+    "models": {
+      "type": "array",
+      "description": "Models exposed by this provider through the gateway.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "gpt-4o-2024-08-06" },
+          "family": { "type": "string", "example": "gpt-4o" },
+          "contextWindow": { "type": "integer", "example": 128000 },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["chat", "completion", "embedding", "vision", "audio", "image", "video", "tool-use", "json-mode"]
+            }
+          },
+          "pricing": {
+            "type": "object",
+            "properties": {
+              "inputPerMillionTokens": { "type": "number", "example": 2.5 },
+              "outputPerMillionTokens": { "type": "number", "example": 10.0 },
+              "currency": { "type": "string", "example": "USD" }
+            }
+          }
+        },
+        "required": ["id"]
+      }
+    },
+    "region": {
+      "type": "string",
+      "description": "Region or zone this provider backend is reached through.",
+      "example": "us-east-1"
+    },
+    "rateLimits": {
+      "type": "object",
+      "properties": {
+        "requestsPerMinute": { "type": "integer", "example": 10000 },
+        "tokensPerMinute": { "type": "integer", "example": 2000000 }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "deprecated", "disabled"],
+      "example": "active"
+    }
+  },
+  "required": ["providerId", "kind", "apiCompatibility"]
+}

@@ -1,0 +1,457 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: AI Gateway (API Evangelist Topic Index)
+  description: Vocabulary and taxonomy for the AI Gateway topic — the LLM routers, prompt firewalls, model fallback proxies, cost-control planes, and policy engines that sit between applications and AI providers.
+  created: '2026-05-22'
+  modified: '2026-05-22'
+
+operational:
+  apis:
+    - name: AI Gateway Topic Index
+      namespace: ai-gateway
+      version: "1.0"
+      baseUrl: https://github.com/api-evangelist/ai-gateway
+      status: active
+
+  resources:
+    - name: routes
+      description: Model routes mapping a client-facing alias and matchers to one or more upstream provider backends with caching, fallback, and policy.
+      actions:
+        - list
+        - create
+        - get
+        - update
+        - delete
+    - name: providers
+      description: Upstream LLM provider backends registered with the gateway, including base URL, wire-format compatibility, BYOK keys, and model catalog.
+      actions:
+        - list
+        - register
+        - get
+        - update
+        - deregister
+    - name: models
+      description: Models exposed through the gateway, including family, context window, capabilities, and unit pricing.
+      actions:
+        - list
+        - get
+    - name: policies
+      description: Reusable guardrails, cost controls, rate limits, access rules, data-residency constraints, and audit configurations attachable to routes, tenants, or keys.
+      actions:
+        - list
+        - create
+        - get
+        - update
+        - attach
+        - detach
+    - name: virtual-keys
+      description: Tenant-scoped API keys issued by the gateway, mapping client credentials to budgets, allowed models, and policies.
+      actions:
+        - list
+        - issue
+        - rotate
+        - revoke
+    - name: budgets
+      description: Spend caps applied per tenant, team, key, or route, with throttle or block actions at threshold.
+      actions:
+        - list
+        - get
+        - update
+    - name: cache
+      description: Exact-match and semantic response cache state.
+      actions:
+        - get
+        - invalidate
+        - configure
+    - name: telemetry
+      description: Per-request token, latency, cost, and trace data emitted by the gateway.
+      actions:
+        - query
+        - export
+    - name: guardrails
+      description: Prompt injection, PII, toxicity, regex, and topic-control engines applied to requests and responses.
+      actions:
+        - list
+        - configure
+        - evaluate
+    - name: audit-logs
+      description: Persistent audit trail of routed requests, applied policies, and outcomes.
+      actions:
+        - query
+        - export
+
+  actions:
+    - name: list
+      description: Enumerate resources
+      httpMethod: GET
+      pattern: read
+    - name: get
+      description: Retrieve a specific resource
+      httpMethod: GET
+      pattern: read
+    - name: create
+      description: Create a resource
+      httpMethod: POST
+      pattern: write
+    - name: register
+      description: Register an upstream provider with the gateway
+      httpMethod: POST
+      pattern: write
+    - name: update
+      description: Modify an existing resource
+      httpMethod: PUT
+      pattern: write
+    - name: delete
+      description: Remove a resource
+      httpMethod: DELETE
+      pattern: destructive
+    - name: deregister
+      description: Remove an upstream provider
+      httpMethod: DELETE
+      pattern: destructive
+    - name: attach
+      description: Bind a policy to a route, tenant, or key
+      httpMethod: POST
+      pattern: write
+    - name: detach
+      description: Unbind a policy
+      httpMethod: DELETE
+      pattern: write
+    - name: issue
+      description: Issue a virtual key
+      httpMethod: POST
+      pattern: write
+    - name: rotate
+      description: Rotate a virtual key's secret
+      httpMethod: POST
+      pattern: write
+    - name: revoke
+      description: Revoke a virtual key
+      httpMethod: DELETE
+      pattern: destructive
+    - name: invalidate
+      description: Invalidate cache entries
+      httpMethod: POST
+      pattern: write
+    - name: configure
+      description: Update cache or guardrail configuration
+      httpMethod: PUT
+      pattern: write
+    - name: query
+      description: Query telemetry or audit logs
+      httpMethod: POST
+      pattern: query
+    - name: export
+      description: Export telemetry or audit data
+      httpMethod: POST
+      pattern: read
+    - name: evaluate
+      description: Run a guardrail policy against a request or response
+      httpMethod: POST
+      pattern: query
+
+  schemas:
+    core:
+      - name: AIGatewayRoute
+        description: A single model route on an AI gateway
+        properties:
+          - name
+          - modelAlias
+          - matchers
+          - backends
+          - strategy
+          - cache
+          - rateLimit
+          - budget
+          - guardrails
+          - retries
+          - observability
+          - tenant
+      - name: AIGatewayProvider
+        description: An upstream LLM provider backend registered with the gateway
+        properties:
+          - providerId
+          - displayName
+          - kind
+          - baseUrl
+          - apiCompatibility
+          - authentication
+          - models
+          - region
+          - status
+      - name: AIGatewayPolicy
+        description: A reusable AI gateway policy
+        properties:
+          - policyId
+          - name
+          - kind
+          - stage
+          - scope
+          - guardrail
+          - cost
+          - rateLimit
+          - access
+          - dataResidency
+          - audit
+          - enabled
+
+  enums:
+    providers:
+      - openai
+      - anthropic
+      - google-gemini
+      - vertex-ai
+      - aws-bedrock
+      - azure-openai
+      - cohere
+      - mistral
+      - meta-llama
+      - xai
+      - deepseek
+      - groq
+      - together-ai
+      - openrouter
+      - replicate
+      - hugging-face
+      - cerebras
+      - alibaba-dashscope
+      - databricks
+      - ollama
+      - vllm
+      - workers-ai
+    api_compatibility:
+      - openai
+      - anthropic
+      - google-gemini
+      - cohere
+      - bedrock
+      - vertex
+      - ollama
+      - vllm
+      - native
+    deployment_models:
+      - cloud
+      - self-host
+      - opensource
+      - edge
+    strategies:
+      - fallback
+      - load-balance
+      - fanout
+      - shadow
+      - cost-optimized
+      - latency-optimized
+    cache_modes:
+      - off
+      - exact
+      - semantic
+    policy_kinds:
+      - guardrail
+      - cost
+      - rate-limit
+      - access
+      - data-residency
+      - audit
+      - transformation
+    guardrail_types:
+      - pii
+      - prompt-injection
+      - jailbreak
+      - toxicity
+      - topic
+      - regex
+      - moderation
+      - secret-detection
+      - custom-webhook
+    guardrail_actions:
+      - allow
+      - redact
+      - block
+      - warn
+      - log-only
+    auth_types:
+      - bearer
+      - apikey
+      - basic
+      - iam
+      - service-account
+      - none
+    model_capabilities:
+      - chat
+      - completion
+      - embedding
+      - vision
+      - audio
+      - image
+      - video
+      - tool-use
+      - json-mode
+
+  authentication:
+    schemes:
+      - name: Virtual Key
+        type: bearer
+        description: Gateway-issued API key scoped to a tenant, team, budget, and policy set
+      - name: BYOK
+        type: bearer
+        description: Customer-supplied provider key held by the gateway and injected into upstream calls
+      - name: OAuth2
+        type: oauth2
+        description: SSO and enterprise identity-provider integration for management plane access
+      - name: JWT
+        type: bearer
+        description: Identity-bound JWT for fine-grained route and model access
+
+capability:
+  workflows:
+    - name: Multi-Provider LLM Routing
+      description: Configure multiple LLM provider backends and route client requests with fallback, load balancing, and per-tenant credentials.
+      apis:
+        - ai-gateway
+      personas:
+        - Platform Engineer
+      domains:
+        - LLM Routing
+    - name: Semantic Caching
+      description: Cache LLM responses by prompt-embedding similarity to cut spend and latency across repeated workloads.
+      apis:
+        - ai-gateway
+      personas:
+        - Platform Engineer
+      domains:
+        - Cost Controls
+    - name: Cost Containment and FinOps
+      description: Apply per-tenant, per-team, and per-key budgets and report cost attribution across LLM traffic.
+      apis:
+        - ai-gateway
+      personas:
+        - FinOps Lead
+        - Platform Engineer
+      domains:
+        - Cost Controls
+    - name: Prompt and Response Guardrails
+      description: Apply PII redaction, prompt-injection detection, toxicity filtering, and topic control to every request and response.
+      apis:
+        - ai-gateway
+      personas:
+        - Security Engineer
+      domains:
+        - Guardrails
+    - name: Centralized AI Governance
+      description: Enforce model allowlists, data-residency constraints, audit logging, and RBAC over every AI request leaving the organization.
+      apis:
+        - ai-gateway
+      personas:
+        - Security Engineer
+        - Platform Engineer
+      domains:
+        - Governance
+    - name: Observability and Evaluation
+      description: Export request, token, cost, latency, and trace data to OpenTelemetry, Langfuse, Phoenix, or Langsmith and run evaluation panels via fanout routes.
+      apis:
+        - ai-gateway
+      personas:
+        - AI Developer
+        - Platform Engineer
+      domains:
+        - Observability
+    - name: Multi-Tenant AI Platform
+      description: Issue virtual keys per product team with isolated budgets, models, logs, and guardrails.
+      apis:
+        - ai-gateway
+      personas:
+        - Platform Engineer
+      domains:
+        - Governance
+
+  personas:
+    - id: platform-engineer
+      name: Platform Engineer
+      description: Engineers running the gateway as shared infrastructure for product teams
+      workflows:
+        - Multi-Provider LLM Routing
+        - Semantic Caching
+        - Multi-Tenant AI Platform
+        - Observability and Evaluation
+    - id: ai-developer
+      name: AI Developer
+      description: Application developers consuming the gateway as an LLM API
+      workflows:
+        - Multi-Provider LLM Routing
+        - Observability and Evaluation
+    - id: security-engineer
+      name: Security Engineer
+      description: Security teams applying guardrails and governance to all AI traffic
+      workflows:
+        - Prompt and Response Guardrails
+        - Centralized AI Governance
+    - id: finops-lead
+      name: FinOps Lead
+      description: FinOps practitioners attributing and capping AI spend across the organization
+      workflows:
+        - Cost Containment and FinOps
+
+  domains:
+    - name: LLM Routing
+      description: Provider abstraction, model aliases, matchers, fallback, load balancing, and fanout.
+    - name: Cost Controls
+      description: Caching, budgets, cost-optimized routing, and FinOps attribution.
+    - name: Guardrails
+      description: PII redaction, prompt-injection detection, jailbreak filtering, toxicity, and topic control.
+    - name: Governance
+      description: RBAC, virtual keys, model allowlists, data-residency, multi-tenant isolation, and audit logs.
+    - name: Observability
+      description: OpenTelemetry, Langfuse, Phoenix, and dashboard surfaces for token, cost, latency, and error metrics.
+
+crossReference:
+  - resource: routes
+    operations:
+      - list
+      - create
+      - update
+    workflows:
+      - Multi-Provider LLM Routing
+      - Semantic Caching
+    personas:
+      - Platform Engineer
+      - AI Developer
+  - resource: providers
+    operations:
+      - list
+      - register
+    workflows:
+      - Multi-Provider LLM Routing
+    personas:
+      - Platform Engineer
+  - resource: policies
+    operations:
+      - list
+      - create
+      - attach
+    workflows:
+      - Prompt and Response Guardrails
+      - Centralized AI Governance
+      - Cost Containment and FinOps
+    personas:
+      - Security Engineer
+      - FinOps Lead
+  - resource: virtual-keys
+    operations:
+      - issue
+      - rotate
+      - revoke
+    workflows:
+      - Multi-Tenant AI Platform
+    personas:
+      - Platform Engineer
+  - resource: telemetry
+    operations:
+      - query
+      - export
+    workflows:
+      - Observability and Evaluation
+      - Cost Containment and FinOps
+    personas:
+      - AI Developer
+      - FinOps Lead

@@ -1,0 +1,24 @@
+{
+  "name": "evaluation-fanout",
+  "modelAlias": "eval-panel",
+  "matchers": [
+    { "type": "path", "key": "path", "value": "/v1/eval/panel" }
+  ],
+  "backends": [
+    { "provider": "openai", "model": "gpt-4o-2024-08-06", "weight": 100, "credentialRef": "openai-prod" },
+    { "provider": "anthropic", "model": "claude-sonnet-4-5", "weight": 100, "credentialRef": "anthropic-prod" },
+    { "provider": "google-gemini", "model": "gemini-2.5-pro", "weight": 100, "credentialRef": "gemini-prod" }
+  ],
+  "strategy": "fanout",
+  "cache": { "mode": "off" },
+  "rateLimit": {
+    "requestsPerMinute": 60,
+    "concurrency": 8
+  },
+  "observability": {
+    "openTelemetry": true,
+    "langfuse": true,
+    "logRequestBody": true
+  },
+  "tenant": "ml-research"
+}

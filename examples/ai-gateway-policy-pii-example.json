@@ -1,0 +1,14 @@
+{
+  "policyId": "pii-redaction-default",
+  "name": "PII Redaction",
+  "kind": "guardrail",
+  "stage": "both",
+  "scope": "tenant",
+  "guardrail": {
+    "type": "pii",
+    "categories": ["ssn", "email", "phone", "credit-card", "passport", "medical-id"],
+    "action": "redact",
+    "engine": "presidio"
+  },
+  "enabled": true
+}

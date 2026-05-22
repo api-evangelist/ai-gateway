@@ -1,0 +1,467 @@
+aid: ai-gateway
+name: AI Gateway
+description: An API Evangelist landscape index of AI gateways — the LLM routers, prompt firewalls, model fallback proxies, cost-control planes, and policy engines that sit between applications and AI
+  providers. AI gateways unify access across OpenAI, Anthropic, Google, AWS Bedrock, Azure OpenAI, and self-hosted models behind a common interface and apply caching, routing, guardrails, observability,
+  rate limiting, budgets, RBAC, and audit controls. This index catalogs commercial SaaS gateways, open-source projects, API gateway AI plugins, and cloud-provider AI proxies, with a shared schema and
+  vocabulary for describing model routes, fallbacks, guardrails, and budgets across vendors.
+url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/apis.yml
+humanURL: https://github.com/api-evangelist/ai-gateway
+type: Index
+position: Consuming
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- AI Gateway
+- LLM Router
+- LLM Proxy
+- Model Routing
+- Prompt Firewall
+- Guardrails
+- AI Observability
+- Cost Controls
+- AI Governance
+- API Gateway
+created: '2026-05-22'
+modified: '2026-05-22'
+specificationVersion: '0.19'
+apis:
+- aid: ai-gateway:portkey
+  name: Portkey
+  description: Portkey is a production-grade AI gateway and control plane that fronts 1,600+ LLMs with unified routing, fallbacks, semantic caching, guardrails, cost attribution, and prompt management.
+    The open-source Portkey Gateway is MIT-licensed; a hosted SaaS adds governance, observability, and enterprise controls.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - AI Gateway
+  - LLM Router
+  - Guardrails
+  - Observability
+  - Prompt Management
+  - Open Source
+  properties:
+  - type: Portal
+    url: https://portkey.ai/
+  - type: Documentation
+    url: https://portkey.ai/docs/
+  - type: GitHubRepository
+    url: https://github.com/Portkey-AI/gateway
+  - type: GitHubOrganization
+    url: https://github.com/Portkey-AI
+  x-deployment:
+  - cloud
+  - self-host
+  - opensource
+  x-license: MIT
+- aid: ai-gateway:openrouter
+  name: OpenRouter
+  description: OpenRouter is a unified inference marketplace exposing 400+ models from 60+ providers behind one OpenAI-compatible API, with automatic provider fallback, pay-as-you-go credits, custom data
+    policies, and edge-routed latency optimization. It is a proprietary SaaS service.
+  humanURL: https://openrouter.ai/
+  baseURL: https://openrouter.ai/api/v1
+  tags:
+  - AI Gateway
+  - LLM Marketplace
+  - Multi-Provider
+  - Fallback
+  - Proprietary
+  properties:
+  - type: Portal
+    url: https://openrouter.ai/
+  - type: Documentation
+    url: https://openrouter.ai/docs
+  - type: Models
+    url: https://openrouter.ai/models
+  x-deployment:
+  - cloud
+  x-license: Proprietary
+- aid: ai-gateway:litellm
+  name: LiteLLM
+  description: LiteLLM (BerriAI) is an open-source LLM gateway that exposes 100+ LLM providers — OpenAI, Anthropic, Azure, Bedrock, Gemini — through a single OpenAI-compatible API. The LiteLLM Proxy adds
+    virtual keys, load balancing, RPM/TPM limits, spend tracking, and observability hooks for Langfuse, Phoenix, Langsmith, and OpenTelemetry. Self-hostable via Docker; enterprise support available.
+  humanURL: https://www.litellm.ai/
+  baseURL: https://api.litellm.ai
+  tags:
+  - AI Gateway
+  - LLM Proxy
+  - Open Source
+  - Cost Tracking
+  - Load Balancing
+  properties:
+  - type: Portal
+    url: https://www.litellm.ai/
+  - type: Documentation
+    url: https://docs.litellm.ai/
+  - type: GitHubRepository
+    url: https://github.com/BerriAI/litellm
+  - type: PyPI
+    url: https://pypi.org/project/litellm/
+  x-deployment:
+  - self-host
+  - opensource
+  - cloud
+  x-license: MIT
+- aid: ai-gateway:helicone
+  name: Helicone
+  description: Helicone is an open-source AI observability and routing platform centered on requests, sessions, prompts, datasets, rate limits, and alerts. Integrates with OpenAI, Anthropic, Google
+    Gemini, DeepSeek, Together AI, Mistral, Groq, Azure, OpenRouter, and LiteLLM. Available as managed cloud or self-hosted.
+  humanURL: https://www.helicone.ai/
+  baseURL: https://api.helicone.ai
+  tags:
+  - AI Gateway
+  - Observability
+  - Prompt Management
+  - Open Source
+  - Caching
+  properties:
+  - type: Portal
+    url: https://www.helicone.ai/
+  - type: Documentation
+    url: https://docs.helicone.ai/
+  - type: GitHubRepository
+    url: https://github.com/Helicone/helicone
+  x-deployment:
+  - cloud
+  - self-host
+  - opensource
+- aid: ai-gateway:cloudflare-ai-gateway
+  name: Cloudflare AI Gateway
+  description: Cloudflare AI Gateway is an edge-deployed proxy that fronts AI providers — Workers AI, Anthropic, Google Gemini, OpenAI, Replicate, and more — with caching, rate limiting, analytics, and
+    request logging. Available on all Cloudflare plans.
+  humanURL: https://developers.cloudflare.com/ai-gateway/
+  baseURL: https://gateway.ai.cloudflare.com
+  tags:
+  - AI Gateway
+  - Edge
+  - Caching
+  - Rate Limiting
+  - Analytics
+  properties:
+  - type: Portal
+    url: https://www.cloudflare.com/developer-platform/ai-gateway/
+  - type: Documentation
+    url: https://developers.cloudflare.com/ai-gateway/
+  - type: GettingStarted
+    url: https://developers.cloudflare.com/ai-gateway/get-started/
+  x-deployment:
+  - cloud
+  x-license: Proprietary
+- aid: ai-gateway:kong-ai-gateway
+  name: Kong AI Gateway
+  description: The Kong AI Gateway is delivered as the AI Proxy plugin for Kong Gateway, transforming and proxying requests across 16+ providers including OpenAI, Azure OpenAI, Anthropic, Amazon Bedrock,
+    Gemini, Vertex AI, Cohere, Mistral, Hugging Face, Llama, xAI, Ollama, Alibaba DashScope, Cerebras, DeepSeek, Databricks, and vLLM. Supports chat, completions, embeddings, assistants, audio, image,
+    video, batches, and files routes with template-based model selection.
+  humanURL: https://konghq.com/products/kong-ai-gateway
+  baseURL: https://konghq.com
+  tags:
+  - AI Gateway
+  - API Gateway
+  - Multi-Provider
+  - Plugin
+  - Kong
+  properties:
+  - type: Portal
+    url: https://konghq.com/products/kong-ai-gateway
+  - type: Documentation
+    url: https://developer.konghq.com/plugins/ai-proxy/
+  - type: GitHubOrganization
+    url: https://github.com/Kong
+  x-deployment:
+  - cloud
+  - self-host
+  - opensource
+- aid: ai-gateway:apisix-ai-proxy
+  name: Apache APISIX AI Proxy
+  description: The Apache APISIX ai-proxy plugin streamlines integration with LLMs by converting plugin settings into the appropriate request format for OpenAI, DeepSeek, Azure OpenAI, Anthropic, Google
+    Gemini, Vertex AI, OpenRouter, AIMLAPI, and OpenAI-compatible services. Supports embedding models, observability of token usage and latency, custom endpoints, and flexible authentication. Apache
+    2.0 licensed.
+  humanURL: https://apisix.apache.org/
+  baseURL: https://apisix.apache.org
+  tags:
+  - AI Gateway
+  - API Gateway
+  - Open Source
+  - Apache
+  - Plugin
+  properties:
+  - type: Portal
+    url: https://apisix.apache.org/
+  - type: Documentation
+    url: https://apisix.apache.org/docs/apisix/plugins/ai-proxy/
+  - type: GitHubRepository
+    url: https://github.com/apache/apisix
+  x-deployment:
+  - self-host
+  - opensource
+  x-license: Apache-2.0
+- aid: ai-gateway:tetrate-agent-router
+  name: Tetrate Agent Router Service
+  description: Tetrate Agent Router Service is an Envoy AI Gateway-as-a-service from the creators of Envoy, providing an approved LLM catalog, unified model access, automatic fallback, cost management,
+    AI guardrails, and an MCP gateway for agent tool connectivity. Built on Envoy AI Gateway.
+  humanURL: https://tetrate.io/products/tetrate-agent-router-service/
+  baseURL: https://tetrate.io
+  tags:
+  - AI Gateway
+  - Envoy
+  - MCP Gateway
+  - Guardrails
+  - Multi-Provider
+  properties:
+  - type: Portal
+    url: https://tetrate.io/products/tetrate-agent-router-service/
+  - type: Documentation
+    url: https://docs.tetrate.io/
+  - type: GitHubOrganization
+    url: https://github.com/envoyproxy
+  - type: GitHubRepository
+    url: https://github.com/envoyproxy/ai-gateway
+  x-deployment:
+  - cloud
+  - self-host
+  - opensource
+- aid: ai-gateway:nvidia-nim
+  name: NVIDIA NIM
+  description: NVIDIA NIM is a set of inference microservices for streamlined AI model deployment, prebuilt and optimized for low-latency, high-throughput inference on NVIDIA-accelerated infrastructure.
+    Includes TensorRT and TensorRT-LLM-backed engines and exposes stable OpenAI-compatible APIs for self-hosted and cloud deployment.
+  humanURL: https://www.nvidia.com/en-us/ai/
+  baseURL: https://build.nvidia.com
+  tags:
+  - AI Gateway
+  - Inference
+  - Self-Hosted
+  - NVIDIA
+  - GPU
+  properties:
+  - type: Portal
+    url: https://build.nvidia.com/
+  - type: Documentation
+    url: https://docs.nvidia.com/nim/
+  - type: GitHubOrganization
+    url: https://github.com/NVIDIA
+  x-deployment:
+  - self-host
+  - cloud
+  x-license: Proprietary
+- aid: ai-gateway:traefik-ai-gateway
+  name: Traefik AI Gateway
+  description: Traefik AI Gateway is an enterprise, self-hosted, Kubernetes-native AI gateway with safety and governance (NVIDIA Safety NIMs, jailbreak detection, content filtering across 22+
+    categories), multi-LLM support via an OpenAI-compatible interface (Anthropic, Azure OpenAI, AWS Bedrock, Cohere, Gemini, Mistral, Ollama), intelligent routing, credential management, semantic
+    caching with claimed 40-70 percent cost savings, PII protection via Presidio (35+ recognizers), and OpenTelemetry observability.
+  humanURL: https://traefik.io/solutions/ai-gateway/
+  baseURL: https://traefik.io
+  tags:
+  - AI Gateway
+  - Kubernetes
+  - Guardrails
+  - Semantic Caching
+  - PII Protection
+  properties:
+  - type: Portal
+    url: https://traefik.io/solutions/ai-gateway/
+  - type: Documentation
+    url: https://doc.traefik.io/
+  - type: GitHubOrganization
+    url: https://github.com/traefik
+  x-deployment:
+  - self-host
+  - cloud
+- aid: ai-gateway:together-ai
+  name: Together AI
+  description: Together AI is a full-stack AI Native Cloud for inference, fine-tuning, and GPU clusters powered by research, exposing serverless inference, batch processing, dedicated model and container
+    inference, GPU clusters, fine-tuning, managed storage, and code sandboxes for open-source models.
+  humanURL: https://www.together.ai/
+  baseURL: https://api.together.xyz
+  tags:
+  - Inference
+  - Open Models
+  - GPU
+  - Multi-Provider
+  - SaaS
+  properties:
+  - type: Portal
+    url: https://www.together.ai/
+  - type: Documentation
+    url: https://docs.together.ai/
+  - type: GitHubOrganization
+    url: https://github.com/togethercomputer
+  x-deployment:
+  - cloud
+  x-license: Proprietary
+- aid: ai-gateway:anyscale
+  name: Anyscale
+  description: Anyscale is the production-scale AI platform built on Ray by the creators of Ray, supporting LLM inference and other data-intensive AI workloads across distributed GPU clusters. Integrates
+    with vLLM and SkyRL; users bring their own models.
+  humanURL: https://www.anyscale.com/
+  baseURL: https://api.endpoints.anyscale.com
+  tags:
+  - Inference
+  - Ray
+  - GPU
+  - Open Source
+  - Self-Hosted
+  properties:
+  - type: Portal
+    url: https://www.anyscale.com/
+  - type: Documentation
+    url: https://docs.anyscale.com/
+  - type: GitHubOrganization
+    url: https://github.com/anyscale
+  - type: GitHubRepository
+    url: https://github.com/ray-project/ray
+  x-deployment:
+  - cloud
+  - self-host
+- aid: ai-gateway:langdb
+  name: LangDB
+  description: LangDB is an enterprise AI gateway for routing and governing LLM traffic across providers, with observability, cost tracking, and policy enforcement. Public homepage was unreachable for
+    direct verification during this profiling pass; see GitHub for current capabilities.
+  humanURL: https://www.langdb.ai/
+  baseURL: https://api.langdb.ai
+  tags:
+  - AI Gateway
+  - LLM Router
+  - Observability
+  - Cost Tracking
+  properties:
+  - type: Portal
+    url: https://www.langdb.ai/
+  - type: GitHubOrganization
+    url: https://github.com/langdb
+  x-deployment:
+  - cloud
+  - self-host
+- aid: ai-gateway:envoy-ai-gateway
+  name: Envoy AI Gateway
+  description: Envoy AI Gateway is an open-source extension to Envoy Proxy and Envoy Gateway, providing a Kubernetes-native AI traffic plane for routing, governing, and observing LLM calls across
+    providers. Apache 2.0 licensed and CNCF-aligned.
+  humanURL: https://aigateway.envoyproxy.io/
+  baseURL: https://aigateway.envoyproxy.io
+  tags:
+  - AI Gateway
+  - Envoy
+  - Kubernetes
+  - CNCF
+  - Open Source
+  properties:
+  - type: Portal
+    url: https://aigateway.envoyproxy.io/
+  - type: Documentation
+    url: https://aigateway.envoyproxy.io/docs/
+  - type: GitHubRepository
+    url: https://github.com/envoyproxy/ai-gateway
+  - type: GitHubOrganization
+    url: https://github.com/envoyproxy
+  x-deployment:
+  - self-host
+  - opensource
+  x-license: Apache-2.0
+- aid: ai-gateway:gentrace
+  name: Gentrace
+  description: Gentrace was an AI evaluation and observability product; the company has shut down and its codebase is now MIT-licensed open source on GitHub. Included here for historical completeness in
+    the AI gateway-adjacent observability category.
+  humanURL: https://github.com/gentrace/gentrace
+  tags:
+  - AI Observability
+  - Open Source
+  - Archived
+  - Evaluation
+  properties:
+  - type: GitHubRepository
+    url: https://github.com/gentrace/gentrace
+  x-deployment:
+  - opensource
+  x-license: MIT
+  x-status: archived
+common:
+- type: JSONSchema
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-schema/ai-gateway-route-schema.json
+  title: AI Gateway Route Schema
+- type: JSONSchema
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-schema/ai-gateway-provider-schema.json
+  title: AI Gateway Provider Schema
+- type: JSONSchema
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-schema/ai-gateway-policy-schema.json
+  title: AI Gateway Policy Schema
+- type: JSONStructure
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-structure/ai-gateway-route-structure.json
+  title: AI Gateway Route Structure
+- type: JSONStructure
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-structure/ai-gateway-provider-structure.json
+  title: AI Gateway Provider Structure
+- type: JSONStructure
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-structure/ai-gateway-policy-structure.json
+  title: AI Gateway Policy Structure
+- type: JSONLD
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-ld/ai-gateway-context.jsonld
+- type: Vocabulary
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/vocabulary/ai-gateway-vocabulary.yml
+- type: Examples
+  url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/examples/
+- type: Features
+  data:
+  - name: Provider Abstraction
+    description: A unified, typically OpenAI-compatible API surface that lets clients call any supported LLM provider without provider-specific SDK juggling.
+  - name: Model Routing
+    description: Route requests to the right model and provider based on alias, header, request content, identity, time-of-day, cost, or latency.
+  - name: Fallback and Failover
+    description: Automatically retry failed requests against backup providers or models when a primary upstream is degraded, rate-limited, or down.
+  - name: Load Balancing and Fanout
+    description: Distribute traffic across multiple providers or replicas using weighted, priority-based, or RPM/TPM-aware load balancing.
+  - name: Response Caching
+    description: Exact-match and semantic caching of model responses to cut latency and provider spend; some gateways claim 40-70 percent cost savings.
+  - name: Cost Controls and Budgets
+    description: Per-user, per-team, per-key, per-project budgets, spend tracking, and hard or soft caps on token consumption.
+  - name: Rate Limiting and Quotas
+    description: RPM, TPM, concurrency, and per-key quotas enforced at the gateway, decoupled from each upstream provider's limits.
+  - name: Guardrails and Prompt Firewall
+    description: Prompt injection detection, jailbreak filtering, content moderation, PII redaction, and topic control applied to requests and responses.
+  - name: Observability
+    description: Request, response, token, cost, latency, error, and trace data exported via OpenTelemetry, Langfuse, Phoenix, Langsmith, or built-in dashboards.
+  - name: Authentication and RBAC
+    description: Virtual keys, JWT, OAuth2, SSO, and role-based access control over which clients can use which models with which budgets.
+  - name: BYOK and Secret Management
+    description: Bring-your-own provider API keys, with the gateway holding and injecting them so clients never see upstream credentials.
+  - name: Multi-Tenant Governance
+    description: Per-tenant isolation of keys, budgets, logs, and policies for platform teams serving multiple internal product teams.
+  - name: MCP Federation
+    description: Some AI gateways also front Model Context Protocol servers, aggregating tools and exposing a single MCP endpoint to agents.
+- type: UseCases
+  data:
+  - name: Provider-Agnostic LLM Access
+    description: Front many LLM providers behind one API so application teams can switch models without changing client code.
+  - name: Cost Containment for AI
+    description: Apply caching, routing to cheaper models, and per-team budgets to keep generative-AI spend predictable.
+  - name: Reliability and Failover
+    description: Survive single-provider outages by automatically failing over to backup models when the primary degrades.
+  - name: Centralized AI Governance
+    description: Enforce content, PII, and policy controls in one place for every AI request leaving the organization.
+  - name: Observability and FinOps
+    description: Attribute cost and latency to teams, projects, and users; expose token-level metrics to FinOps and SRE.
+  - name: Multi-Tenant AI Platforms
+    description: Build internal AI platforms where each product team gets its own virtual keys, budgets, and logs.
+- type: Integrations
+  data:
+  - name: OpenAI
+    description: Front OpenAI's GPT, embeddings, and image models behind the gateway with virtual keys and budgets.
+  - name: Anthropic
+    description: Route Claude requests through the gateway for fallback, caching, and central observability.
+  - name: Google Gemini and Vertex AI
+    description: Proxy Google Gemini and Vertex AI calls with OpenAI-format translation where supported.
+  - name: AWS Bedrock
+    description: Bridge OpenAI-format clients to Bedrock-hosted Anthropic, Mistral, Cohere, Meta, and Amazon models.
+  - name: Azure OpenAI
+    description: Route to Azure-hosted OpenAI deployments with per-region failover and key rotation.
+  - name: Ollama and vLLM
+    description: Front self-hosted Ollama and vLLM inference servers for hybrid cloud and on-prem inference.
+  - name: OpenTelemetry
+    description: Export request, token, cost, and trace data to any OTel-compatible observability backend.
+  - name: Langfuse and Phoenix
+    description: Stream prompts, completions, and evaluations to Langfuse and Arize Phoenix for prompt and model analytics.
+  - name: Model Context Protocol
+    description: Some AI gateways federate MCP servers alongside LLM routes, exposing a unified agent endpoint.
+- type: Portal
+  url: https://github.com/api-evangelist/ai-gateway
+- type: Blog
+  url: https://apievangelist.com/category/ai-gateway/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

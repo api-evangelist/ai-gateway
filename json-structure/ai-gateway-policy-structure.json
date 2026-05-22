@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-structure/ai-gateway-policy-structure.json",
+  "name": "AIGatewayPolicy",
+  "description": "A reusable AI gateway policy — guardrail, cost control, rate limit, access rule, data-residency constraint, audit configuration, or transformation — attachable to routes, tenants, or virtual keys.",
+  "type": "object",
+  "properties": {
+    "policyId": { "type": "string", "example": "pii-redaction-default" },
+    "name": { "type": "string", "example": "PII Redaction" },
+    "kind": { "type": "string", "example": "guardrail" },
+    "stage": { "type": "string", "example": "both" },
+    "scope": { "type": "string", "example": "tenant" },
+    "guardrail": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "example": "pii" },
+        "categories": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "action": { "type": "string", "example": "redact" },
+        "engine": { "type": "string", "example": "presidio" }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "properties": {
+        "limit": { "type": "float", "example": 1000.0 },
+        "currency": { "type": "string", "example": "USD" },
+        "period": { "type": "string", "example": "monthly" },
+        "action": { "type": "string", "example": "block" }
+      }
+    },
+    "rateLimit": {
+      "type": "object",
+      "properties": {
+        "requestsPerMinute": { "type": "int32", "example": 600 },
+        "tokensPerMinute": { "type": "int32", "example": 200000 },
+        "concurrency": { "type": "int32", "example": 32 }
+      }
+    },
+    "access": {
+      "type": "object",
+      "properties": {
+        "roles": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "allowedModels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "deniedModels": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "dataResidency": {
+      "type": "object",
+      "properties": {
+        "allowedRegions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "deniedProviders": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "properties": {
+        "logRequestBody": { "type": "boolean", "example": true },
+        "logResponseBody": { "type": "boolean", "example": true },
+        "retentionDays": { "type": "int32", "example": 90 },
+        "sink": { "type": "string", "example": "s3://ai-audit-logs/prod" }
+      }
+    },
+    "enabled": { "type": "boolean", "example": true }
+  },
+  "required": ["policyId", "kind", "stage", "scope"]
+}
