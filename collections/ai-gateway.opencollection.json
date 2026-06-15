@@ -1,0 +1,911 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portkey AI Gateway API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-portkey-api-key",
+      "value": "{{x-portkey-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a chat completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/chat/completions"
+          },
+          "docs": "Create a chat completion"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Completions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a text completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/completions"
+          },
+          "docs": "Create a text completion"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Embeddings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create embeddings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/embeddings"
+          },
+          "docs": "Create embeddings"
+        },
+        {
+          "info": {
+            "name": "Rerank documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/rerank"
+          },
+          "docs": "Rerank documents"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Images",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate images",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/images/generations"
+          },
+          "docs": "Generate images"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Audio",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Text-to-speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/audio/speech"
+          },
+          "docs": "Text-to-speech"
+        },
+        {
+          "info": {
+            "name": "Speech-to-text transcription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/audio/transcriptions"
+          },
+          "docs": "Speech-to-text transcription"
+        },
+        {
+          "info": {
+            "name": "Audio translation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/audio/translations"
+          },
+          "docs": "Audio translation"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Batches",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List batches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/batches"
+          },
+          "docs": "List batches"
+        },
+        {
+          "info": {
+            "name": "Create a batch job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/batches"
+          },
+          "docs": "Create a batch job"
+        },
+        {
+          "info": {
+            "name": "Retrieve a batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/batches/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a batch"
+        },
+        {
+          "info": {
+            "name": "Cancel a batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.portkey.ai/v1/batches/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a batch"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/files"
+          },
+          "docs": "List files"
+        },
+        {
+          "info": {
+            "name": "Upload a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/files"
+          },
+          "docs": "Upload a file"
+        },
+        {
+          "info": {
+            "name": "Get file content",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/files/:id/content",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get file content"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "FineTuning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List fine-tuning jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/fine_tuning/jobs"
+          },
+          "docs": "List fine-tuning jobs"
+        },
+        {
+          "info": {
+            "name": "Create a fine-tuning job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/fine_tuning/jobs"
+          },
+          "docs": "Create a fine-tuning job"
+        },
+        {
+          "info": {
+            "name": "List events for a fine-tuning job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/fine_tuning/jobs/:id/events",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List events for a fine-tuning job"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Assistants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List assistants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/assistants"
+          },
+          "docs": "List assistants"
+        },
+        {
+          "info": {
+            "name": "Create an assistant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/assistants"
+          },
+          "docs": "Create an assistant"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Threads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/threads"
+          },
+          "docs": "Create a thread"
+        },
+        {
+          "info": {
+            "name": "List messages in a thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/threads/:id/messages",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List messages in a thread"
+        },
+        {
+          "info": {
+            "name": "Add a message to a thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/threads/:id/messages",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add a message to a thread"
+        },
+        {
+          "info": {
+            "name": "Run an assistant against a thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/threads/:id/runs",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Run an assistant against a thread"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Prompts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Execute a saved prompt template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/prompts/completions"
+          },
+          "docs": "Execute a saved prompt template"
+        },
+        {
+          "info": {
+            "name": "Render a prompt template with variables",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/prompts/render"
+          },
+          "docs": "Render a prompt template with variables"
+        },
+        {
+          "info": {
+            "name": "List prompts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/prompts"
+          },
+          "docs": "List prompts"
+        },
+        {
+          "info": {
+            "name": "Create a prompt",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/prompts"
+          },
+          "docs": "Create a prompt"
+        },
+        {
+          "info": {
+            "name": "List prompt collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/prompts/collections"
+          },
+          "docs": "List prompt collections"
+        },
+        {
+          "info": {
+            "name": "List prompt labels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/prompts/labels"
+          },
+          "docs": "List prompt labels"
+        },
+        {
+          "info": {
+            "name": "List reusable prompt partials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/prompts/partials"
+          },
+          "docs": "List reusable prompt partials"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Responses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a response (Open Responses spec)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/responses"
+          },
+          "docs": "Create a response (Open Responses spec)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Analytics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Time-series analytics data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/analytics/graphs/"
+          },
+          "docs": "Time-series analytics data"
+        },
+        {
+          "info": {
+            "name": "Grouped analytics data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/analytics/groups/"
+          },
+          "docs": "Grouped analytics data"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Configs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List gateway configurations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/configs"
+          },
+          "docs": "List gateway configurations"
+        },
+        {
+          "info": {
+            "name": "Create a gateway configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/configs"
+          },
+          "docs": "Create a gateway configuration"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "APIKeys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List API keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/api-keys"
+          },
+          "docs": "List API keys"
+        },
+        {
+          "info": {
+            "name": "Create an API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/api-keys"
+          },
+          "docs": "Create an API key"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Integrations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List LLM provider integrations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/integrations"
+          },
+          "docs": "List LLM provider integrations"
+        },
+        {
+          "info": {
+            "name": "Create an integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/integrations"
+          },
+          "docs": "Create an integration"
+        },
+        {
+          "info": {
+            "name": "List providers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/providers"
+          },
+          "docs": "List providers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "VirtualKeys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List virtual keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/virtual-keys"
+          },
+          "docs": "List virtual keys"
+        },
+        {
+          "info": {
+            "name": "Create a virtual key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/virtual-keys"
+          },
+          "docs": "Create a virtual key"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Guardrails",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List guardrails",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/guardrails"
+          },
+          "docs": "List guardrails"
+        },
+        {
+          "info": {
+            "name": "Create a guardrail policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/guardrails"
+          },
+          "docs": "Create a guardrail policy"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List rate-limit policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/policies/rate-limits"
+          },
+          "docs": "List rate-limit policies"
+        },
+        {
+          "info": {
+            "name": "Create a rate-limit policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/policies/rate-limits"
+          },
+          "docs": "Create a rate-limit policy"
+        },
+        {
+          "info": {
+            "name": "List usage-limit policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/policies/usage-limits"
+          },
+          "docs": "List usage-limit policies"
+        },
+        {
+          "info": {
+            "name": "Create a usage-limit policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/policies/usage-limits"
+          },
+          "docs": "Create a usage-limit policy"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Workspaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workspaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/workspaces"
+          },
+          "docs": "List workspaces"
+        },
+        {
+          "info": {
+            "name": "Create a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/workspaces"
+          },
+          "docs": "Create a workspace"
+        },
+        {
+          "info": {
+            "name": "List workspace members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/workspace-members"
+          },
+          "docs": "List workspace members"
+        },
+        {
+          "info": {
+            "name": "Invite a user to the workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/user-invites"
+          },
+          "docs": "Invite a user to the workspace"
+        },
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/users"
+          },
+          "docs": "List users"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MCP",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List MCP integrations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/mcp-integrations"
+          },
+          "docs": "List MCP integrations"
+        },
+        {
+          "info": {
+            "name": "List MCP server instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/mcp-servers"
+          },
+          "docs": "List MCP server instances"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Logs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query request logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/logs"
+          },
+          "docs": "Query request logs"
+        },
+        {
+          "info": {
+            "name": "Insert request logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/logs"
+          },
+          "docs": "Insert request logs"
+        },
+        {
+          "info": {
+            "name": "Create a log export",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/logs/exports"
+          },
+          "docs": "Create a log export"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Feedback",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit user feedback for a request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/feedback"
+          },
+          "docs": "Submit user feedback for a request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
