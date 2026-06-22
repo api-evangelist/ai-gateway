@@ -3,16 +3,13 @@
   "feeds": [
     {
       "source": "https://apievangelist.com/category/ai-gateway/",
-      "error": "HTTPError"
-    },
-    {
-      "source": "https://github.com/api-evangelist/ai-gateway",
-      "feed_url": "https://github.com/api-evangelist/ai-gateway",
+      "feed_url": "",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "none",
+      "error": "category page and /feed/ paths return 404; no category-scoped feed resolves"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-21T17:00:00Z"
 }
