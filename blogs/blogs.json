@@ -3,13 +3,10 @@
   "feeds": [
     {
       "source": "https://apievangelist.com/category/ai-gateway/",
-      "feed_url": "",
-      "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "category page and /feed/ paths return 404; no category-scoped feed resolves"
+      "error": "404 not found"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-21T17:00:00Z"
+  "fetched": "2026-06-27T12:21:01Z"
 }
