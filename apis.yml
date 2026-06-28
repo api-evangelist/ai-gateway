@@ -74,6 +74,38 @@ apis:
   x-deployment:
   - cloud
   x-license: Proprietary
+- aid: ai-gateway:sub2api-558686
+  name: Sub2API 558686
+  description: Sub2API 558686 is a hosted OpenAI-compatible API gateway and model aggregator for developers who want one base URL and API key for GPT, Claude, Gemini-style model routing. Public docs, pricing,
+    models, OpenAPI, llms.txt, and SDK examples are available; current public self-registration is closed, so test access requires an existing account or operator-provided key.
+  humanURL: https://sub2api.558686.xyz/
+  baseURL: https://sub2api.558686.xyz
+  tags:
+  - AI Gateway
+  - LLM Router
+  - LLM Proxy
+  - OpenAI Compatible
+  - Multi-Provider
+  properties:
+  - type: Portal
+    url: https://sub2api.558686.xyz/
+  - type: Documentation
+    url: https://sub2api.558686.xyz/docs
+  - type: Pricing
+    url: https://sub2api.558686.xyz/pricing
+  - type: Models
+    url: https://sub2api.558686.xyz/models
+  - type: OpenAPI
+    url: https://sub2api.558686.xyz/openapi.json
+  - type: APIsJSON
+    url: https://sub2api.558686.xyz/apis.json
+  - type: Examples
+    url: https://github.com/go165/sub2api-gateway-examples
+  - type: Testing
+    url: https://github.com/go165/sub2api-openai-compatible-smoke-test
+  x-deployment:
+  - cloud
+  x-license: Proprietary
 - aid: ai-gateway:litellm
   name: LiteLLM
   description: LiteLLM (BerriAI) is an open-source LLM gateway that exposes 100+ LLM providers — OpenAI, Anthropic, Azure, Bedrock, Gemini — through a single OpenAI-compatible API. The LiteLLM Proxy adds
