@@ -372,6 +372,10 @@ apis:
   x-license: MIT
   x-status: archived
 common:
+- type: DomainSecurity
+  url: security/ai-gateway-domain-security.yml
+- type: Authentication
+  url: authentication/ai-gateway-authentication.yml
 - type: JSONSchema
   url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/json-schema/ai-gateway-route-schema.json
   title: AI Gateway Route Schema

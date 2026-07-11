@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/ai-gateway-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: PortkeyApiKey
+  type: apiKey
+  in: header
+  parameter: x-portkey-api-key
+  description: Portkey API key header.
+  sources:
+  - openapi/ai-gateway-openapi.yml
+- name: PortkeyProvider
+  type: apiKey
+  in: header
+  parameter: x-portkey-provider
+  description: Upstream provider selector header.
+  sources:
+  - openapi/ai-gateway-openapi.yml
