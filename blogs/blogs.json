@@ -2,11 +2,13 @@
   "repo": "ai-gateway",
   "feeds": [
     {
-      "source": "https://apievangelist.com/category/ai-gateway/",
+      "source": "https://github.com/api-evangelist/ai-gateway",
+      "feed_url": "https://github.com/api-evangelist/ai-gateway",
+      "title": "",
       "saved": 0,
-      "error": "404 not found"
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T12:21:01Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
