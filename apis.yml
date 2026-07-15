@@ -372,6 +372,8 @@ apis:
   x-license: MIT
   x-status: archived
 common:
+- type: AgenticAccess
+  url: agentic-access/ai-gateway-agentic-access.yml
 - type: DomainSecurity
   url: security/ai-gateway-domain-security.yml
 - type: Authentication
