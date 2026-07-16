@@ -354,6 +354,37 @@ apis:
   - self-host
   - opensource
   x-license: Apache-2.0
+- aid: ai-gateway:gomodel
+  name: GoModel
+  description: GoModel is an open-source AI gateway written in Go that fronts OpenAI, Anthropic, Gemini, Groq, xAI, Ollama, and other providers behind a single OpenAI-compatible API covering chat,
+    responses, embeddings, audio, and realtime. It ships as one self-hosted binary and adds virtual models with load balancing and failover, usage and cost tracking, budgets, scoped rate limits,
+    guardrails, audit logging, an aggregating MCP gateway, and an admin dashboard. MIT licensed.
+  humanURL: https://gomodel.enterpilot.io/
+  baseURL: https://gomodel.enterpilot.io
+  tags:
+  - AI Gateway
+  - LLM Router
+  - LLM Proxy
+  - Multi-Provider
+  - Guardrails
+  - Cost Tracking
+  - Rate Limiting
+  - MCP Gateway
+  - Self-Hosted
+  - Open Source
+  properties:
+  - type: Portal
+    url: https://gomodel.enterpilot.io/
+  - type: Documentation
+    url: https://gomodel.enterpilot.io/docs
+  - type: GitHubRepository
+    url: https://github.com/ENTERPILOT/GoModel
+  - type: GitHubOrganization
+    url: https://github.com/ENTERPILOT
+  x-deployment:
+  - self-host
+  - opensource
+  x-license: MIT
 - aid: ai-gateway:gentrace
   name: Gentrace
   description: Gentrace was an AI evaluation and observability product; the company has shut down and its codebase is now MIT-licensed open source on GitHub. Included here for historical completeness in
