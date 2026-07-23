@@ -1,0 +1,84 @@
+openapi: 3.1.0
+info:
+  title: Portkey AI Gateway Analytics Prompts API
+  version: 1.0.0
+  description: REST API for the Portkey AI Gateway, exposing OpenAI-compatible inference endpoints (chat, completions, embeddings, images, audio, files, batches, fine-tuning, assistants and threads, prompts, responses) plus admin endpoints for analytics, configs, API keys, integrations, providers, virtual keys, guardrails, policies, prompt management, workspaces, MCP, logs, and feedback. Selected as the canonical "AI gateway" exemplar for this index entry; the broader landscape is catalogued in apis.yml.
+  contact:
+    name: Portkey
+    url: https://portkey.ai/docs/
+servers:
+- url: https://api.portkey.ai/v1
+  description: Production inference and admin API
+security:
+- PortkeyApiKey: []
+  PortkeyProvider: []
+tags:
+- name: Prompts
+paths:
+  /prompts/completions:
+    post:
+      tags:
+      - Prompts
+      summary: Execute a saved prompt template
+      responses:
+        '200':
+          description: Completion
+  /prompts/render:
+    post:
+      tags:
+      - Prompts
+      summary: Render a prompt template with variables
+      responses:
+        '200':
+          description: Rendered prompt
+  /prompts:
+    get:
+      tags:
+      - Prompts
+      summary: List prompts
+      responses:
+        '200':
+          description: Prompts
+    post:
+      tags:
+      - Prompts
+      summary: Create a prompt
+      responses:
+        '200':
+          description: Prompt created
+  /prompts/collections:
+    get:
+      tags:
+      - Prompts
+      summary: List prompt collections
+      responses:
+        '200':
+          description: Collections
+  /prompts/labels:
+    get:
+      tags:
+      - Prompts
+      summary: List prompt labels
+      responses:
+        '200':
+          description: Labels
+  /prompts/partials:
+    get:
+      tags:
+      - Prompts
+      summary: List reusable prompt partials
+      responses:
+        '200':
+          description: Partials
+components:
+  securitySchemes:
+    PortkeyApiKey:
+      type: apiKey
+      in: header
+      name: x-portkey-api-key
+      description: Portkey API key header.
+    PortkeyProvider:
+      type: apiKey
+      in: header
+      name: x-portkey-provider
+      description: Upstream provider selector header.

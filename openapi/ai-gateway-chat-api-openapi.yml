@@ -1,0 +1,37 @@
+openapi: 3.1.0
+info:
+  title: Portkey AI Gateway Analytics Chat API
+  version: 1.0.0
+  description: REST API for the Portkey AI Gateway, exposing OpenAI-compatible inference endpoints (chat, completions, embeddings, images, audio, files, batches, fine-tuning, assistants and threads, prompts, responses) plus admin endpoints for analytics, configs, API keys, integrations, providers, virtual keys, guardrails, policies, prompt management, workspaces, MCP, logs, and feedback. Selected as the canonical "AI gateway" exemplar for this index entry; the broader landscape is catalogued in apis.yml.
+  contact:
+    name: Portkey
+    url: https://portkey.ai/docs/
+servers:
+- url: https://api.portkey.ai/v1
+  description: Production inference and admin API
+security:
+- PortkeyApiKey: []
+  PortkeyProvider: []
+tags:
+- name: Chat
+paths:
+  /chat/completions:
+    post:
+      tags:
+      - Chat
+      summary: Create a chat completion
+      responses:
+        '200':
+          description: Chat completion
+components:
+  securitySchemes:
+    PortkeyApiKey:
+      type: apiKey
+      in: header
+      name: x-portkey-api-key
+      description: Portkey API key header.
+    PortkeyProvider:
+      type: apiKey
+      in: header
+      name: x-portkey-provider
+      description: Upstream provider selector header.

@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Portkey AI Gateway Analytics Workspaces API
+  version: 1.0.0
+  description: REST API for the Portkey AI Gateway, exposing OpenAI-compatible inference endpoints (chat, completions, embeddings, images, audio, files, batches, fine-tuning, assistants and threads, prompts, responses) plus admin endpoints for analytics, configs, API keys, integrations, providers, virtual keys, guardrails, policies, prompt management, workspaces, MCP, logs, and feedback. Selected as the canonical "AI gateway" exemplar for this index entry; the broader landscape is catalogued in apis.yml.
+  contact:
+    name: Portkey
+    url: https://portkey.ai/docs/
+servers:
+- url: https://api.portkey.ai/v1
+  description: Production inference and admin API
+security:
+- PortkeyApiKey: []
+  PortkeyProvider: []
+tags:
+- name: Workspaces
+paths:
+  /workspaces:
+    get:
+      tags:
+      - Workspaces
+      summary: List workspaces
+      responses:
+        '200':
+          description: Workspaces
+    post:
+      tags:
+      - Workspaces
+      summary: Create a workspace
+      responses:
+        '200':
+          description: Workspace created
+  /workspace-members:
+    get:
+      tags:
+      - Workspaces
+      summary: List workspace members
+      responses:
+        '200':
+          description: Members
+  /user-invites:
+    post:
+      tags:
+      - Workspaces
+      summary: Invite a user to the workspace
+      responses:
+        '200':
+          description: Invite sent
+  /users:
+    get:
+      tags:
+      - Workspaces
+      summary: List users
+      responses:
+        '200':
+          description: Users
+components:
+  securitySchemes:
+    PortkeyApiKey:
+      type: apiKey
+      in: header
+      name: x-portkey-api-key
+      description: Portkey API key header.
+    PortkeyProvider:
+      type: apiKey
+      in: header
+      name: x-portkey-provider
+      description: Upstream provider selector header.

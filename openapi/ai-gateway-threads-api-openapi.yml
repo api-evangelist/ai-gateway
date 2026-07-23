@@ -1,0 +1,73 @@
+openapi: 3.1.0
+info:
+  title: Portkey AI Gateway Analytics Threads API
+  version: 1.0.0
+  description: REST API for the Portkey AI Gateway, exposing OpenAI-compatible inference endpoints (chat, completions, embeddings, images, audio, files, batches, fine-tuning, assistants and threads, prompts, responses) plus admin endpoints for analytics, configs, API keys, integrations, providers, virtual keys, guardrails, policies, prompt management, workspaces, MCP, logs, and feedback. Selected as the canonical "AI gateway" exemplar for this index entry; the broader landscape is catalogued in apis.yml.
+  contact:
+    name: Portkey
+    url: https://portkey.ai/docs/
+servers:
+- url: https://api.portkey.ai/v1
+  description: Production inference and admin API
+security:
+- PortkeyApiKey: []
+  PortkeyProvider: []
+tags:
+- name: Threads
+paths:
+  /threads:
+    post:
+      tags:
+      - Threads
+      summary: Create a thread
+      responses:
+        '200':
+          description: Thread created
+  /threads/{id}/messages:
+    get:
+      tags:
+      - Threads
+      summary: List messages in a thread
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Messages
+    post:
+      tags:
+      - Threads
+      summary: Add a message to a thread
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Message added
+  /threads/{id}/runs:
+    post:
+      tags:
+      - Threads
+      summary: Run an assistant against a thread
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Run created
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    PortkeyApiKey:
+      type: apiKey
+      in: header
+      name: x-portkey-api-key
+      description: Portkey API key header.
+    PortkeyProvider:
+      type: apiKey
+      in: header
+      name: x-portkey-provider
+      description: Upstream provider selector header.
