@@ -7,9 +7,21 @@ description: An API Evangelist landscape index of AI gateways — the LLM router
 url: https://raw.githubusercontent.com/api-evangelist/ai-gateway/refs/heads/main/apis.yml
 humanURL: https://github.com/api-evangelist/ai-gateway
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consuming
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ai-gateway.png
 tags:
 - AI Gateway
 - LLM Router
@@ -27,8 +39,10 @@ specificationVersion: '0.19'
 apis:
 - aid: ai-gateway:portkey
   name: Portkey
-  description: Portkey is a production-grade AI gateway and control plane that fronts 1,600+ LLMs with unified routing, fallbacks, semantic caching, guardrails, cost attribution, and prompt management.
-    The open-source Portkey Gateway is MIT-licensed; a hosted SaaS adds governance, observability, and enterprise controls.
+  description: >-
+    Portkey is a production-grade AI gateway and control plane that fronts 1,600+ LLMs with unified routing,
+    fallbacks, semantic caching, guardrails, cost attribution, and prompt management. The open-source
+    Portkey Gateway is MIT-licensed; a hosted SaaS adds governance, observability, and enterprise controls.
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
@@ -54,8 +68,10 @@ apis:
   x-license: MIT
 - aid: ai-gateway:openrouter
   name: OpenRouter
-  description: OpenRouter is a unified inference marketplace exposing 400+ models from 60+ providers behind one OpenAI-compatible API, with automatic provider fallback, pay-as-you-go credits, custom data
-    policies, and edge-routed latency optimization. It is a proprietary SaaS service.
+  description: >-
+    OpenRouter is a unified inference marketplace exposing 400+ models from 60+ providers behind one OpenAI-compatible
+    API, with automatic provider fallback, pay-as-you-go credits, custom data policies, and edge-routed
+    latency optimization. It is a proprietary SaaS service.
   humanURL: https://openrouter.ai/
   baseURL: https://openrouter.ai/api/v1
   tags:
@@ -76,8 +92,11 @@ apis:
   x-license: Proprietary
 - aid: ai-gateway:litellm
   name: LiteLLM
-  description: LiteLLM (BerriAI) is an open-source LLM gateway that exposes 100+ LLM providers — OpenAI, Anthropic, Azure, Bedrock, Gemini — through a single OpenAI-compatible API. The LiteLLM Proxy adds
-    virtual keys, load balancing, RPM/TPM limits, spend tracking, and observability hooks for Langfuse, Phoenix, Langsmith, and OpenTelemetry. Self-hostable via Docker; enterprise support available.
+  description: >-
+    LiteLLM (BerriAI) is an open-source LLM gateway that exposes 100+ LLM providers — OpenAI, Anthropic,
+    Azure, Bedrock, Gemini — through a single OpenAI-compatible API. The LiteLLM Proxy adds virtual keys,
+    load balancing, RPM/TPM limits, spend tracking, and observability hooks for Langfuse, Phoenix, Langsmith,
+    and OpenTelemetry. Self-hostable via Docker; enterprise support available.
   humanURL: https://www.litellm.ai/
   baseURL: https://api.litellm.ai
   tags:
@@ -102,8 +121,10 @@ apis:
   x-license: MIT
 - aid: ai-gateway:helicone
   name: Helicone
-  description: Helicone is an open-source AI observability and routing platform centered on requests, sessions, prompts, datasets, rate limits, and alerts. Integrates with OpenAI, Anthropic, Google
-    Gemini, DeepSeek, Together AI, Mistral, Groq, Azure, OpenRouter, and LiteLLM. Available as managed cloud or self-hosted.
+  description: >-
+    Helicone is an open-source AI observability and routing platform centered on requests, sessions, prompts,
+    datasets, rate limits, and alerts. Integrates with OpenAI, Anthropic, Google Gemini, DeepSeek, Together
+    AI, Mistral, Groq, Azure, OpenRouter, and LiteLLM. Available as managed cloud or self-hosted.
   humanURL: https://www.helicone.ai/
   baseURL: https://api.helicone.ai
   tags:
@@ -125,8 +146,10 @@ apis:
   - opensource
 - aid: ai-gateway:cloudflare-ai-gateway
   name: Cloudflare AI Gateway
-  description: Cloudflare AI Gateway is an edge-deployed proxy that fronts AI providers — Workers AI, Anthropic, Google Gemini, OpenAI, Replicate, and more — with caching, rate limiting, analytics, and
-    request logging. Available on all Cloudflare plans.
+  description: >-
+    Cloudflare AI Gateway is an edge-deployed proxy that fronts AI providers — Workers AI, Anthropic,
+    Google Gemini, OpenAI, Replicate, and more — with caching, rate limiting, analytics, and request logging.
+    Available on all Cloudflare plans.
   humanURL: https://developers.cloudflare.com/ai-gateway/
   baseURL: https://gateway.ai.cloudflare.com
   tags:
@@ -147,9 +170,12 @@ apis:
   x-license: Proprietary
 - aid: ai-gateway:kong-ai-gateway
   name: Kong AI Gateway
-  description: The Kong AI Gateway is delivered as the AI Proxy plugin for Kong Gateway, transforming and proxying requests across 16+ providers including OpenAI, Azure OpenAI, Anthropic, Amazon Bedrock,
-    Gemini, Vertex AI, Cohere, Mistral, Hugging Face, Llama, xAI, Ollama, Alibaba DashScope, Cerebras, DeepSeek, Databricks, and vLLM. Supports chat, completions, embeddings, assistants, audio, image,
-    video, batches, and files routes with template-based model selection.
+  description: >-
+    The Kong AI Gateway is delivered as the AI Proxy plugin for Kong Gateway, transforming and proxying
+    requests across 16+ providers including OpenAI, Azure OpenAI, Anthropic, Amazon Bedrock, Gemini, Vertex
+    AI, Cohere, Mistral, Hugging Face, Llama, xAI, Ollama, Alibaba DashScope, Cerebras, DeepSeek, Databricks,
+    and vLLM. Supports chat, completions, embeddings, assistants, audio, image, video, batches, and files
+    routes with template-based model selection.
   humanURL: https://konghq.com/products/kong-ai-gateway
   baseURL: https://konghq.com
   tags:
@@ -171,9 +197,11 @@ apis:
   - opensource
 - aid: ai-gateway:apisix-ai-proxy
   name: Apache APISIX AI Proxy
-  description: The Apache APISIX ai-proxy plugin streamlines integration with LLMs by converting plugin settings into the appropriate request format for OpenAI, DeepSeek, Azure OpenAI, Anthropic, Google
-    Gemini, Vertex AI, OpenRouter, AIMLAPI, and OpenAI-compatible services. Supports embedding models, observability of token usage and latency, custom endpoints, and flexible authentication. Apache
-    2.0 licensed.
+  description: >-
+    The Apache APISIX ai-proxy plugin streamlines integration with LLMs by converting plugin settings
+    into the appropriate request format for OpenAI, DeepSeek, Azure OpenAI, Anthropic, Google Gemini,
+    Vertex AI, OpenRouter, AIMLAPI, and OpenAI-compatible services. Supports embedding models, observability
+    of token usage and latency, custom endpoints, and flexible authentication. Apache 2.0 licensed.
   humanURL: https://apisix.apache.org/
   baseURL: https://apisix.apache.org
   tags:
@@ -195,8 +223,10 @@ apis:
   x-license: Apache-2.0
 - aid: ai-gateway:tetrate-agent-router
   name: Tetrate Agent Router Service
-  description: Tetrate Agent Router Service is an Envoy AI Gateway-as-a-service from the creators of Envoy, providing an approved LLM catalog, unified model access, automatic fallback, cost management,
-    AI guardrails, and an MCP gateway for agent tool connectivity. Built on Envoy AI Gateway.
+  description: >-
+    Tetrate Agent Router Service is an Envoy AI Gateway-as-a-service from the creators of Envoy, providing
+    an approved LLM catalog, unified model access, automatic fallback, cost management, AI guardrails,
+    and an MCP gateway for agent tool connectivity. Built on Envoy AI Gateway.
   humanURL: https://tetrate.io/products/tetrate-agent-router-service/
   baseURL: https://tetrate.io
   tags:
@@ -220,8 +250,11 @@ apis:
   - opensource
 - aid: ai-gateway:nvidia-nim
   name: NVIDIA NIM
-  description: NVIDIA NIM is a set of inference microservices for streamlined AI model deployment, prebuilt and optimized for low-latency, high-throughput inference on NVIDIA-accelerated infrastructure.
-    Includes TensorRT and TensorRT-LLM-backed engines and exposes stable OpenAI-compatible APIs for self-hosted and cloud deployment.
+  description: >-
+    NVIDIA NIM is a set of inference microservices for streamlined AI model deployment, prebuilt and optimized
+    for low-latency, high-throughput inference on NVIDIA-accelerated infrastructure. Includes TensorRT
+    and TensorRT-LLM-backed engines and exposes stable OpenAI-compatible APIs for self-hosted and cloud
+    deployment.
   humanURL: https://www.nvidia.com/en-us/ai/
   baseURL: https://build.nvidia.com
   tags:
@@ -243,9 +276,12 @@ apis:
   x-license: Proprietary
 - aid: ai-gateway:traefik-ai-gateway
   name: Traefik AI Gateway
-  description: Traefik AI Gateway is an enterprise, self-hosted, Kubernetes-native AI gateway with safety and governance (NVIDIA Safety NIMs, jailbreak detection, content filtering across 22+
-    categories), multi-LLM support via an OpenAI-compatible interface (Anthropic, Azure OpenAI, AWS Bedrock, Cohere, Gemini, Mistral, Ollama), intelligent routing, credential management, semantic
-    caching with claimed 40-70 percent cost savings, PII protection via Presidio (35+ recognizers), and OpenTelemetry observability.
+  description: >-
+    Traefik AI Gateway is an enterprise, self-hosted, Kubernetes-native AI gateway with safety and governance
+    (NVIDIA Safety NIMs, jailbreak detection, content filtering across 22+ categories), multi-LLM support
+    via an OpenAI-compatible interface (Anthropic, Azure OpenAI, AWS Bedrock, Cohere, Gemini, Mistral,
+    Ollama), intelligent routing, credential management, semantic caching with claimed 40-70 percent cost
+    savings, PII protection via Presidio (35+ recognizers), and OpenTelemetry observability.
   humanURL: https://traefik.io/solutions/ai-gateway/
   baseURL: https://traefik.io
   tags:
@@ -266,8 +302,10 @@ apis:
   - cloud
 - aid: ai-gateway:together-ai
   name: Together AI
-  description: Together AI is a full-stack AI Native Cloud for inference, fine-tuning, and GPU clusters powered by research, exposing serverless inference, batch processing, dedicated model and container
-    inference, GPU clusters, fine-tuning, managed storage, and code sandboxes for open-source models.
+  description: >-
+    Together AI is a full-stack AI Native Cloud for inference, fine-tuning, and GPU clusters powered by
+    research, exposing serverless inference, batch processing, dedicated model and container inference,
+    GPU clusters, fine-tuning, managed storage, and code sandboxes for open-source models.
   humanURL: https://www.together.ai/
   baseURL: https://api.together.xyz
   tags:
@@ -288,8 +326,10 @@ apis:
   x-license: Proprietary
 - aid: ai-gateway:anyscale
   name: Anyscale
-  description: Anyscale is the production-scale AI platform built on Ray by the creators of Ray, supporting LLM inference and other data-intensive AI workloads across distributed GPU clusters. Integrates
-    with vLLM and SkyRL; users bring their own models.
+  description: >-
+    Anyscale is the production-scale AI platform built on Ray by the creators of Ray, supporting LLM inference
+    and other data-intensive AI workloads across distributed GPU clusters. Integrates with vLLM and SkyRL;
+    users bring their own models.
   humanURL: https://www.anyscale.com/
   baseURL: https://api.endpoints.anyscale.com
   tags:
@@ -312,8 +352,10 @@ apis:
   - self-host
 - aid: ai-gateway:langdb
   name: LangDB
-  description: LangDB is an enterprise AI gateway for routing and governing LLM traffic across providers, with observability, cost tracking, and policy enforcement. Public homepage was unreachable for
-    direct verification during this profiling pass; see GitHub for current capabilities.
+  description: >-
+    LangDB is an enterprise AI gateway for routing and governing LLM traffic across providers, with observability,
+    cost tracking, and policy enforcement. Public homepage was unreachable for direct verification during
+    this profiling pass; see GitHub for current capabilities.
   humanURL: https://www.langdb.ai/
   baseURL: https://api.langdb.ai
   tags:
@@ -331,8 +373,10 @@ apis:
   - self-host
 - aid: ai-gateway:envoy-ai-gateway
   name: Envoy AI Gateway
-  description: Envoy AI Gateway is an open-source extension to Envoy Proxy and Envoy Gateway, providing a Kubernetes-native AI traffic plane for routing, governing, and observing LLM calls across
-    providers. Apache 2.0 licensed and CNCF-aligned.
+  description: >-
+    Envoy AI Gateway is an open-source extension to Envoy Proxy and Envoy Gateway, providing a Kubernetes-native
+    AI traffic plane for routing, governing, and observing LLM calls across providers. Apache 2.0 licensed
+    and CNCF-aligned.
   humanURL: https://aigateway.envoyproxy.io/
   baseURL: https://aigateway.envoyproxy.io
   tags:
@@ -356,8 +400,10 @@ apis:
   x-license: Apache-2.0
 - aid: ai-gateway:gentrace
   name: Gentrace
-  description: Gentrace was an AI evaluation and observability product; the company has shut down and its codebase is now MIT-licensed open source on GitHub. Included here for historical completeness in
-    the AI gateway-adjacent observability category.
+  description: >-
+    Gentrace was an AI evaluation and observability product; the company has shut down and its codebase
+    is now MIT-licensed open source on GitHub. Included here for historical completeness in the AI gateway-adjacent
+    observability category.
   humanURL: https://github.com/gentrace/gentrace
   tags:
   - AI Observability
@@ -371,6 +417,236 @@ apis:
   - opensource
   x-license: MIT
   x-status: archived
+- aid: ai-gateway:ai-gateway-analytics-api
+  name: AI Gateway Analytics API
+  description: The Analytics API from AI Gateway — 2 operation(s) for analytics.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Analytics
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-analytics-api-openapi.yml
+- aid: ai-gateway:ai-gateway-apikeys-api
+  name: AI Gateway APIKeys API
+  description: The APIKeys API from AI Gateway — 1 operation(s) for apikeys.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - APIKeys
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-apikeys-api-openapi.yml
+- aid: ai-gateway:ai-gateway-assistants-api
+  name: AI Gateway Assistants API
+  description: The Assistants API from AI Gateway — 1 operation(s) for assistants.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Assistants
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-assistants-api-openapi.yml
+- aid: ai-gateway:ai-gateway-audio-api
+  name: AI Gateway Audio API
+  description: The Audio API from AI Gateway — 3 operation(s) for audio.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Audio
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-audio-api-openapi.yml
+- aid: ai-gateway:ai-gateway-batches-api
+  name: AI Gateway Batches API
+  description: The Batches API from AI Gateway — 2 operation(s) for batches.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Batches
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-batches-api-openapi.yml
+- aid: ai-gateway:ai-gateway-chat-api
+  name: AI Gateway Chat API
+  description: The Chat API from AI Gateway — 1 operation(s) for chat.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-chat-api-openapi.yml
+- aid: ai-gateway:ai-gateway-completions-api
+  name: AI Gateway Completions API
+  description: The Completions API from AI Gateway — 1 operation(s) for completions.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-completions-api-openapi.yml
+- aid: ai-gateway:ai-gateway-configs-api
+  name: AI Gateway Configs API
+  description: The Configs API from AI Gateway — 1 operation(s) for configs.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Configs
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-configs-api-openapi.yml
+- aid: ai-gateway:ai-gateway-embeddings-api
+  name: AI Gateway Embeddings API
+  description: The Embeddings API from AI Gateway — 2 operation(s) for embeddings.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Embeddings
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-embeddings-api-openapi.yml
+- aid: ai-gateway:ai-gateway-feedback-api
+  name: AI Gateway Feedback API
+  description: The Feedback API from AI Gateway — 1 operation(s) for feedback.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Feedback
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-feedback-api-openapi.yml
+- aid: ai-gateway:ai-gateway-files-api
+  name: AI Gateway Files API
+  description: The Files API from AI Gateway — 2 operation(s) for files.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-files-api-openapi.yml
+- aid: ai-gateway:ai-gateway-finetuning-api
+  name: AI Gateway FineTuning API
+  description: The FineTuning API from AI Gateway — 2 operation(s) for finetuning.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - FineTuning
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-finetuning-api-openapi.yml
+- aid: ai-gateway:ai-gateway-guardrails-api
+  name: AI Gateway Guardrails API
+  description: The Guardrails API from AI Gateway — 1 operation(s) for guardrails.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Guardrails
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-guardrails-api-openapi.yml
+- aid: ai-gateway:ai-gateway-images-api
+  name: AI Gateway Images API
+  description: The Images API from AI Gateway — 1 operation(s) for images.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Images
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-images-api-openapi.yml
+- aid: ai-gateway:ai-gateway-integrations-api
+  name: AI Gateway Integrations API
+  description: The Integrations API from AI Gateway — 2 operation(s) for integrations.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Integrations
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-integrations-api-openapi.yml
+- aid: ai-gateway:ai-gateway-logs-api
+  name: AI Gateway Logs API
+  description: The Logs API from AI Gateway — 2 operation(s) for logs.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-logs-api-openapi.yml
+- aid: ai-gateway:ai-gateway-mcp-api
+  name: AI Gateway MCP API
+  description: The MCP API from AI Gateway — 2 operation(s) for mcp.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - MCP
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-mcp-api-openapi.yml
+- aid: ai-gateway:ai-gateway-policies-api
+  name: AI Gateway Policies API
+  description: The Policies API from AI Gateway — 2 operation(s) for policies.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Policies
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-policies-api-openapi.yml
+- aid: ai-gateway:ai-gateway-prompts-api
+  name: AI Gateway Prompts API
+  description: The Prompts API from AI Gateway — 6 operation(s) for prompts.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Prompts
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-prompts-api-openapi.yml
+- aid: ai-gateway:ai-gateway-responses-api
+  name: AI Gateway Responses API
+  description: The Responses API from AI Gateway — 1 operation(s) for responses.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Responses
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-responses-api-openapi.yml
+- aid: ai-gateway:ai-gateway-threads-api
+  name: AI Gateway Threads API
+  description: The Threads API from AI Gateway — 3 operation(s) for threads.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Threads
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-threads-api-openapi.yml
+- aid: ai-gateway:ai-gateway-virtualkeys-api
+  name: AI Gateway VirtualKeys API
+  description: The VirtualKeys API from AI Gateway — 1 operation(s) for virtualkeys.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - VirtualKeys
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-virtualkeys-api-openapi.yml
+- aid: ai-gateway:ai-gateway-workspaces-api
+  name: AI Gateway Workspaces API
+  description: The Workspaces API from AI Gateway — 4 operation(s) for workspaces.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Workspaces
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-workspaces-api-openapi.yml
 common:
 - type: AgenticAccess
   url: agentic-access/ai-gateway-agentic-access.yml
