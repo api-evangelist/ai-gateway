@@ -1,0 +1,483 @@
+openapi: 3.1.0
+info:
+  title: Portkey AI Gateway API
+  version: "1.0.0"
+  description: >-
+    REST API for the Portkey AI Gateway, exposing OpenAI-compatible inference
+    endpoints (chat, completions, embeddings, images, audio, files, batches,
+    fine-tuning, assistants and threads, prompts, responses) plus admin
+    endpoints for analytics, configs, API keys, integrations, providers,
+    virtual keys, guardrails, policies, prompt management, workspaces, MCP,
+    logs, and feedback. Selected as the canonical "AI gateway" exemplar for
+    this index entry; the broader landscape is catalogued in apis.yml.
+  contact:
+    name: Portkey
+    url: https://portkey.ai/docs/
+servers:
+  - url: https://api.portkey.ai/v1
+    description: Production inference and admin API
+tags:
+  - name: Chat
+  - name: Completions
+  - name: Embeddings
+  - name: Images
+  - name: Audio
+  - name: Batches
+  - name: Files
+  - name: FineTuning
+  - name: Assistants
+  - name: Threads
+  - name: Prompts
+  - name: Responses
+  - name: Analytics
+  - name: Configs
+  - name: APIKeys
+  - name: Integrations
+  - name: VirtualKeys
+  - name: Guardrails
+  - name: Policies
+  - name: Workspaces
+  - name: MCP
+  - name: Logs
+  - name: Feedback
+paths:
+  /chat/completions:
+    post:
+      tags: [Chat]
+      summary: Create a chat completion
+      responses:
+        "200":
+          description: Chat completion
+  /completions:
+    post:
+      tags: [Completions]
+      summary: Create a text completion
+      responses:
+        "200":
+          description: Completion
+  /embeddings:
+    post:
+      tags: [Embeddings]
+      summary: Create embeddings
+      responses:
+        "200":
+          description: Embeddings
+  /rerank:
+    post:
+      tags: [Embeddings]
+      summary: Rerank documents
+      responses:
+        "200":
+          description: Reranked documents
+  /images/generations:
+    post:
+      tags: [Images]
+      summary: Generate images
+      responses:
+        "200":
+          description: Image generation response
+  /audio/speech:
+    post:
+      tags: [Audio]
+      summary: Text-to-speech
+      responses:
+        "200":
+          description: Audio bytes
+  /audio/transcriptions:
+    post:
+      tags: [Audio]
+      summary: Speech-to-text transcription
+      responses:
+        "200":
+          description: Transcription
+  /audio/translations:
+    post:
+      tags: [Audio]
+      summary: Audio translation
+      responses:
+        "200":
+          description: Translation
+  /batches:
+    post:
+      tags: [Batches]
+      summary: Create a batch job
+      responses:
+        "200":
+          description: Batch created
+    get:
+      tags: [Batches]
+      summary: List batches
+      responses:
+        "200":
+          description: Batches
+  /batches/{id}:
+    get:
+      tags: [Batches]
+      summary: Retrieve a batch
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        "200":
+          description: Batch
+    delete:
+      tags: [Batches]
+      summary: Cancel a batch
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        "200":
+          description: Cancelled
+  /files:
+    post:
+      tags: [Files]
+      summary: Upload a file
+      responses:
+        "200":
+          description: File uploaded
+    get:
+      tags: [Files]
+      summary: List files
+      responses:
+        "200":
+          description: Files
+  /files/{id}/content:
+    get:
+      tags: [Files]
+      summary: Get file content
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        "200":
+          description: File content
+  /fine_tuning/jobs:
+    post:
+      tags: [FineTuning]
+      summary: Create a fine-tuning job
+      responses:
+        "200":
+          description: Job created
+    get:
+      tags: [FineTuning]
+      summary: List fine-tuning jobs
+      responses:
+        "200":
+          description: Jobs
+  /fine_tuning/jobs/{id}/events:
+    get:
+      tags: [FineTuning]
+      summary: List events for a fine-tuning job
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        "200":
+          description: Events
+  /assistants:
+    post:
+      tags: [Assistants]
+      summary: Create an assistant
+      responses:
+        "200":
+          description: Assistant created
+    get:
+      tags: [Assistants]
+      summary: List assistants
+      responses:
+        "200":
+          description: Assistants
+  /threads:
+    post:
+      tags: [Threads]
+      summary: Create a thread
+      responses:
+        "200":
+          description: Thread created
+  /threads/{id}/messages:
+    get:
+      tags: [Threads]
+      summary: List messages in a thread
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        "200":
+          description: Messages
+    post:
+      tags: [Threads]
+      summary: Add a message to a thread
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        "200":
+          description: Message added
+  /threads/{id}/runs:
+    post:
+      tags: [Threads]
+      summary: Run an assistant against a thread
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        "200":
+          description: Run created
+  /prompts/completions:
+    post:
+      tags: [Prompts]
+      summary: Execute a saved prompt template
+      responses:
+        "200":
+          description: Completion
+  /prompts/render:
+    post:
+      tags: [Prompts]
+      summary: Render a prompt template with variables
+      responses:
+        "200":
+          description: Rendered prompt
+  /responses:
+    post:
+      tags: [Responses]
+      summary: Create a response (Open Responses spec)
+      responses:
+        "200":
+          description: Response created
+  /analytics/graphs/:
+    get:
+      tags: [Analytics]
+      summary: Time-series analytics data
+      responses:
+        "200":
+          description: Graphs
+  /analytics/groups/:
+    get:
+      tags: [Analytics]
+      summary: Grouped analytics data
+      responses:
+        "200":
+          description: Grouped analytics
+  /configs:
+    get:
+      tags: [Configs]
+      summary: List gateway configurations
+      responses:
+        "200":
+          description: Configs
+    post:
+      tags: [Configs]
+      summary: Create a gateway configuration
+      responses:
+        "200":
+          description: Config created
+  /api-keys:
+    get:
+      tags: [APIKeys]
+      summary: List API keys
+      responses:
+        "200":
+          description: API keys
+    post:
+      tags: [APIKeys]
+      summary: Create an API key
+      responses:
+        "200":
+          description: API key created
+  /integrations:
+    get:
+      tags: [Integrations]
+      summary: List LLM provider integrations
+      responses:
+        "200":
+          description: Integrations
+    post:
+      tags: [Integrations]
+      summary: Create an integration
+      responses:
+        "200":
+          description: Integration created
+  /providers:
+    get:
+      tags: [Integrations]
+      summary: List providers
+      responses:
+        "200":
+          description: Providers
+  /virtual-keys:
+    get:
+      tags: [VirtualKeys]
+      summary: List virtual keys
+      responses:
+        "200":
+          description: Virtual keys
+    post:
+      tags: [VirtualKeys]
+      summary: Create a virtual key
+      responses:
+        "200":
+          description: Virtual key created
+  /guardrails:
+    get:
+      tags: [Guardrails]
+      summary: List guardrails
+      responses:
+        "200":
+          description: Guardrails
+    post:
+      tags: [Guardrails]
+      summary: Create a guardrail policy
+      responses:
+        "200":
+          description: Guardrail created
+  /policies/rate-limits:
+    get:
+      tags: [Policies]
+      summary: List rate-limit policies
+      responses:
+        "200":
+          description: Policies
+    post:
+      tags: [Policies]
+      summary: Create a rate-limit policy
+      responses:
+        "200":
+          description: Policy created
+  /policies/usage-limits:
+    get:
+      tags: [Policies]
+      summary: List usage-limit policies
+      responses:
+        "200":
+          description: Policies
+    post:
+      tags: [Policies]
+      summary: Create a usage-limit policy
+      responses:
+        "200":
+          description: Policy created
+  /prompts:
+    get:
+      tags: [Prompts]
+      summary: List prompts
+      responses:
+        "200":
+          description: Prompts
+    post:
+      tags: [Prompts]
+      summary: Create a prompt
+      responses:
+        "200":
+          description: Prompt created
+  /prompts/collections:
+    get:
+      tags: [Prompts]
+      summary: List prompt collections
+      responses:
+        "200":
+          description: Collections
+  /prompts/labels:
+    get:
+      tags: [Prompts]
+      summary: List prompt labels
+      responses:
+        "200":
+          description: Labels
+  /prompts/partials:
+    get:
+      tags: [Prompts]
+      summary: List reusable prompt partials
+      responses:
+        "200":
+          description: Partials
+  /workspaces:
+    get:
+      tags: [Workspaces]
+      summary: List workspaces
+      responses:
+        "200":
+          description: Workspaces
+    post:
+      tags: [Workspaces]
+      summary: Create a workspace
+      responses:
+        "200":
+          description: Workspace created
+  /workspace-members:
+    get:
+      tags: [Workspaces]
+      summary: List workspace members
+      responses:
+        "200":
+          description: Members
+  /user-invites:
+    post:
+      tags: [Workspaces]
+      summary: Invite a user to the workspace
+      responses:
+        "200":
+          description: Invite sent
+  /users:
+    get:
+      tags: [Workspaces]
+      summary: List users
+      responses:
+        "200":
+          description: Users
+  /mcp-integrations:
+    get:
+      tags: [MCP]
+      summary: List MCP integrations
+      responses:
+        "200":
+          description: MCP integrations
+  /mcp-servers:
+    get:
+      tags: [MCP]
+      summary: List MCP server instances
+      responses:
+        "200":
+          description: MCP servers
+  /logs:
+    post:
+      tags: [Logs]
+      summary: Insert request logs
+      responses:
+        "200":
+          description: Logs accepted
+    get:
+      tags: [Logs]
+      summary: Query request logs
+      responses:
+        "200":
+          description: Logs
+  /logs/exports:
+    post:
+      tags: [Logs]
+      summary: Create a log export
+      responses:
+        "200":
+          description: Export created
+  /feedback:
+    post:
+      tags: [Feedback]
+      summary: Submit user feedback for a request
+      responses:
+        "200":
+          description: Feedback received
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    PortkeyApiKey:
+      type: apiKey
+      in: header
+      name: x-portkey-api-key
+      description: Portkey API key header.
+    PortkeyProvider:
+      type: apiKey
+      in: header
+      name: x-portkey-provider
+      description: Upstream provider selector header.
+security:
+  - PortkeyApiKey: []
+    PortkeyProvider: []
