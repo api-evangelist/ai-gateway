@@ -648,6 +648,19 @@ apis:
   - type: OpenAPI
     url: openapi/ai-gateway-workspaces-api-openapi.yml
 common:
+- type: IssueTracker
+  url: https://github.com/Portkey-AI/gateway/issues
+- type: Releases
+  url: https://github.com/Portkey-AI/gateway/releases
+- type: SecurityPolicy
+  url: https://github.com/Portkey-AI/gateway/blob/main/.github/SECURITY.md
+- type: CodeOfConduct
+  url: https://github.com/Portkey-AI/gateway/blob/main/.github/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/Portkey-AI/gateway/blob/main/.github/CONTRIBUTING.md
+- type: License
+  name: MIT
+  url: https://github.com/Portkey-AI/gateway/blob/main/LICENSE
 - type: AgenticAccess
   url: agentic-access/ai-gateway-agentic-access.yml
 - type: DomainSecurity
