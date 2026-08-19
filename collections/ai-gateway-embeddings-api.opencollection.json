@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portkey AI Gateway Analytics Embeddings API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-portkey-api-key",
+      "value": "{{x-portkey-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Embeddings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create embeddings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/embeddings"
+          },
+          "docs": "Create embeddings"
+        },
+        {
+          "info": {
+            "name": "Rerank documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/rerank"
+          },
+          "docs": "Rerank documents"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

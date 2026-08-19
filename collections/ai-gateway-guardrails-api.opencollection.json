@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portkey AI Gateway Analytics Guardrails API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-portkey-api-key",
+      "value": "{{x-portkey-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Guardrails",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List guardrails",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/guardrails"
+          },
+          "docs": "List guardrails"
+        },
+        {
+          "info": {
+            "name": "Create a guardrail policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/guardrails"
+          },
+          "docs": "Create a guardrail policy"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portkey AI Gateway Analytics MCP API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-portkey-api-key",
+      "value": "{{x-portkey-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MCP",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List MCP integrations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/mcp-integrations"
+          },
+          "docs": "List MCP integrations"
+        },
+        {
+          "info": {
+            "name": "List MCP server instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/mcp-servers"
+          },
+          "docs": "List MCP server instances"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

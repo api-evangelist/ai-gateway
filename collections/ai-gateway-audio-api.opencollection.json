@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portkey AI Gateway Analytics Audio API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-portkey-api-key",
+      "value": "{{x-portkey-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Audio",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Text-to-speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/audio/speech"
+          },
+          "docs": "Text-to-speech"
+        },
+        {
+          "info": {
+            "name": "Speech-to-text transcription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/audio/transcriptions"
+          },
+          "docs": "Speech-to-text transcription"
+        },
+        {
+          "info": {
+            "name": "Audio translation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/audio/translations"
+          },
+          "docs": "Audio translation"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

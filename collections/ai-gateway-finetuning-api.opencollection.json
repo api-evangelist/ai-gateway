@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portkey AI Gateway Analytics FineTuning API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-portkey-api-key",
+      "value": "{{x-portkey-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FineTuning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List fine-tuning jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/fine_tuning/jobs"
+          },
+          "docs": "List fine-tuning jobs"
+        },
+        {
+          "info": {
+            "name": "Create a fine-tuning job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/fine_tuning/jobs"
+          },
+          "docs": "Create a fine-tuning job"
+        },
+        {
+          "info": {
+            "name": "List events for a fine-tuning job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/fine_tuning/jobs/:id/events",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List events for a fine-tuning job"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

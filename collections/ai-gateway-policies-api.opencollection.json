@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portkey AI Gateway Analytics Policies API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-portkey-api-key",
+      "value": "{{x-portkey-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List rate-limit policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/policies/rate-limits"
+          },
+          "docs": "List rate-limit policies"
+        },
+        {
+          "info": {
+            "name": "Create a rate-limit policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/policies/rate-limits"
+          },
+          "docs": "Create a rate-limit policy"
+        },
+        {
+          "info": {
+            "name": "List usage-limit policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.portkey.ai/v1/policies/usage-limits"
+          },
+          "docs": "List usage-limit policies"
+        },
+        {
+          "info": {
+            "name": "Create a usage-limit policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.portkey.ai/v1/policies/usage-limits"
+          },
+          "docs": "Create a usage-limit policy"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
