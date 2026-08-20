@@ -51,6 +51,13 @@ apis:
   - Guardrails
   - Observability
   - Prompt Management
+  - Open-Source
+  tags_raw:
+  - AI Gateway
+  - LLM Router
+  - Guardrails
+  - Observability
+  - Prompt Management
   - Open Source
   properties:
   - type: Portal
@@ -102,6 +109,12 @@ apis:
   tags:
   - AI Gateway
   - LLM Proxy
+  - Open-Source
+  - Cost Tracking
+  - Load Balancing
+  tags_raw:
+  - AI Gateway
+  - LLM Proxy
   - Open Source
   - Cost Tracking
   - Load Balancing
@@ -128,6 +141,12 @@ apis:
   humanURL: https://www.helicone.ai/
   baseURL: https://api.helicone.ai
   tags:
+  - AI Gateway
+  - Observability
+  - Prompt Management
+  - Open-Source
+  - Caching
+  tags_raw:
   - AI Gateway
   - Observability
   - Prompt Management
@@ -205,6 +224,12 @@ apis:
   humanURL: https://apisix.apache.org/
   baseURL: https://apisix.apache.org
   tags:
+  - AI Gateway
+  - API Gateway
+  - Open-Source
+  - Apache
+  - Plugin
+  tags_raw:
   - AI Gateway
   - API Gateway
   - Open Source
@@ -313,6 +338,12 @@ apis:
   - Open Models
   - GPU
   - Multi-Provider
+  - Software-as-a-Service
+  tags_raw:
+  - Inference
+  - Open Models
+  - GPU
+  - Multi-Provider
   - SaaS
   properties:
   - type: Portal
@@ -333,6 +364,12 @@ apis:
   humanURL: https://www.anyscale.com/
   baseURL: https://api.endpoints.anyscale.com
   tags:
+  - Inference
+  - Ray
+  - GPU
+  - Open-Source
+  - Self-Hosted
+  tags_raw:
   - Inference
   - Ray
   - GPU
@@ -384,6 +421,12 @@ apis:
   - Envoy
   - Kubernetes
   - CNCF
+  - Open-Source
+  tags_raw:
+  - AI Gateway
+  - Envoy
+  - Kubernetes
+  - CNCF
   - Open Source
   properties:
   - type: Portal
@@ -406,6 +449,11 @@ apis:
     observability category.
   humanURL: https://github.com/gentrace/gentrace
   tags:
+  - AI Observability
+  - Open-Source
+  - Archived
+  - Evaluation
+  tags_raw:
   - AI Observability
   - Open Source
   - Archived
@@ -523,6 +571,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -533,6 +583,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - Fine-Tuning
+  tags_raw:
   - FineTuning
   properties:
   - type: OpenAPI
@@ -553,6 +605,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - Image
+  tags_raw:
   - Images
   properties:
   - type: OpenAPI
@@ -563,6 +617,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - Integration
+  tags_raw:
   - Integrations
   properties:
   - type: OpenAPI
@@ -633,6 +689,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - Virtual Keys
+  tags_raw:
   - VirtualKeys
   properties:
   - type: OpenAPI
