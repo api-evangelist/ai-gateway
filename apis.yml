@@ -596,7 +596,7 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
-  - FineTuning
+  - Fine-Tuning
   tags_raw:
   - FineTuning
   properties:
@@ -702,7 +702,7 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
-  - VirtualKeys
+  - Virtual Keys
   tags_raw:
   - VirtualKeys
   properties:
