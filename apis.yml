@@ -146,6 +146,38 @@ apis:
   - opensource
   - cloud
   x-license: MIT
+- aid: ai-gateway:bifrost
+  name: Bifrost
+  description: >-
+    Bifrost is an open-source, self-hosted AI gateway written in Go that exposes an OpenAI-compatible API for routing
+    requests across providers. It supports adaptive load balancing, virtual keys, guardrails, request logging, and
+    OpenTelemetry observability.
+  humanURL: https://github.com/maximhq/bifrost
+  baseURL: https://github.com/maximhq/bifrost
+  tags:
+  - AI Gateway
+  - LLM Router
+  - Open-Source
+  - Load Balancing
+  - Guardrails
+  - Observability
+  tags_raw:
+  - AI Gateway
+  - LLM Router
+  - Open Source
+  - Load Balancing
+  - Guardrails
+  - Observability
+  properties:
+  - type: Portal
+    url: https://www.getmaxim.ai/bifrost
+  - type: Documentation
+    url: https://docs.getbifrost.ai/
+  - type: GitHubRepository
+    url: https://github.com/maximhq/bifrost
+  x-deployment:
+  - self-host
+  - opensource
 - aid: ai-gateway:helicone
   name: Helicone
   description: >-
