@@ -489,16 +489,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/ai-gateway-analytics-api-openapi.yml
-- aid: ai-gateway:ai-gateway-apikeys-api
-  name: AI Gateway APIKeys API
-  description: The APIKeys API from AI Gateway — 1 operation(s) for apikeys.
-  humanURL: https://portkey.ai/
-  baseURL: https://api.portkey.ai
-  tags:
-  - APIKeys
-  properties:
-  - type: OpenAPI
-    url: openapi/ai-gateway-apikeys-api-openapi.yml
 - aid: ai-gateway:ai-gateway-assistants-api
   name: AI Gateway Assistants API
   description: The Assistants API from AI Gateway — 1 operation(s) for assistants.
@@ -591,18 +581,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/ai-gateway-files-api-openapi.yml
-- aid: ai-gateway:ai-gateway-finetuning-api
-  name: AI Gateway FineTuning API
-  description: The FineTuning API from AI Gateway — 2 operation(s) for finetuning.
-  humanURL: https://portkey.ai/
-  baseURL: https://api.portkey.ai
-  tags:
-  - Fine-Tuning
-  tags_raw:
-  - FineTuning
-  properties:
-  - type: OpenAPI
-    url: openapi/ai-gateway-finetuning-api-openapi.yml
 - aid: ai-gateway:ai-gateway-guardrails-api
   name: AI Gateway Guardrails API
   description: The Guardrails API from AI Gateway — 1 operation(s) for guardrails.
@@ -697,18 +675,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/ai-gateway-threads-api-openapi.yml
-- aid: ai-gateway:ai-gateway-virtualkeys-api
-  name: AI Gateway VirtualKeys API
-  description: The VirtualKeys API from AI Gateway — 1 operation(s) for virtualkeys.
-  humanURL: https://portkey.ai/
-  baseURL: https://api.portkey.ai
-  tags:
-  - Virtual Keys
-  tags_raw:
-  - VirtualKeys
-  properties:
-  - type: OpenAPI
-    url: openapi/ai-gateway-virtualkeys-api-openapi.yml
 - aid: ai-gateway:ai-gateway-workspaces-api
   name: AI Gateway Workspaces API
   description: The Workspaces API from AI Gateway — 4 operation(s) for workspaces.
@@ -719,6 +685,36 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/ai-gateway-workspaces-api-openapi.yml
+- aid: ai-gateway:ai-gateway-api-keys-api
+  name: AI Gateway API Keys API
+  description: The API Keys API from AI Gateway — 1 operation(s) for api keys.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - API Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-api-keys-api-openapi.yml
+- aid: ai-gateway:ai-gateway-fine-tuning-api
+  name: AI Gateway Fine Tuning API
+  description: The Fine Tuning API from AI Gateway — 2 operation(s) for fine tuning.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Fine Tuning
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-fine-tuning-api-openapi.yml
+- aid: ai-gateway:ai-gateway-virtual-keys-api
+  name: AI Gateway Virtual Keys API
+  description: The Virtual Keys API from AI Gateway — 1 operation(s) for virtual keys.
+  humanURL: https://portkey.ai/
+  baseURL: https://api.portkey.ai
+  tags:
+  - Virtual Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/ai-gateway-virtual-keys-api-openapi.yml
 common:
 - type: IssueTracker
   url: https://github.com/Portkey-AI/gateway/issues
