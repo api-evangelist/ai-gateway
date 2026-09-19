@@ -215,6 +215,12 @@ apis:
   - AI Gateway
   - API Gateway
   - Multi-Provider
+  - Plugins
+  - Kong
+  tags_raw:
+  - AI Gateway
+  - API Gateway
+  - Multi-Provider
   - Plugin
   - Kong
   properties:
@@ -242,7 +248,7 @@ apis:
   - API Gateway
   - Open-Source
   - Apache
-  - Plugin
+  - Plugins
   tags_raw:
   - AI Gateway
   - API Gateway
@@ -495,6 +501,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - Assistant
+  tags_raw:
   - Assistants
   properties:
   - type: OpenAPI
@@ -681,6 +689,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - Workspace
+  tags_raw:
   - Workspaces
   properties:
   - type: OpenAPI
@@ -691,6 +701,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - APIKeys
+  tags_raw:
   - API Keys
   properties:
   - type: OpenAPI
@@ -701,6 +713,8 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
+  - Fine-Tuning
+  tags_raw:
   - Fine Tuning
   properties:
   - type: OpenAPI
