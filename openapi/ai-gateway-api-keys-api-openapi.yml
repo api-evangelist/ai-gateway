@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Portkey AI Gateway Analytics FineTuning API
+  title: Portkey AI Gateway API Keys API
   version: 1.0.0
   description: REST API for the Portkey AI Gateway, exposing OpenAI-compatible inference endpoints (chat, completions, embeddings, images, audio, files, batches, fine-tuning, assistants and threads, prompts, responses) plus admin endpoints for analytics, configs, API keys, integrations, providers, virtual keys, guardrails, policies, prompt management, workspaces, MCP, logs, and feedback. Selected as the canonical "AI gateway" exemplar for this index entry; the broader landscape is catalogued in apis.yml.
   contact:
@@ -13,41 +13,28 @@ security:
 - PortkeyApiKey: []
   PortkeyProvider: []
 tags:
-- name: FineTuning
+- name: API Keys
 paths:
-  /fine_tuning/jobs:
+  /api-keys:
+    get:
+      tags:
+      - API Keys
+      summary: List API keys
+      responses:
+        '200':
+          description: API keys
+      operationId: getApiKeys
+      x-operation-id-source: derived
     post:
       tags:
-      - FineTuning
-      summary: Create a fine-tuning job
+      - API Keys
+      summary: Create an API key
       responses:
         '200':
-          description: Job created
-    get:
-      tags:
-      - FineTuning
-      summary: List fine-tuning jobs
-      responses:
-        '200':
-          description: Jobs
-  /fine_tuning/jobs/{id}/events:
-    get:
-      tags:
-      - FineTuning
-      summary: List events for a fine-tuning job
-      parameters:
-      - $ref: '#/components/parameters/Id'
-      responses:
-        '200':
-          description: Events
+          description: API key created
+      operationId: postApiKeys
+      x-operation-id-source: derived
 components:
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     PortkeyApiKey:
       type: apiKey

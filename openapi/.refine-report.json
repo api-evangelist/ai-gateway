@@ -1,33 +1,11 @@
 {
   "provider": "ai-gateway",
   "sources": [
-    "ai-gateway-analytics-api-openapi.yml",
-    "ai-gateway-apikeys-api-openapi.yml",
-    "ai-gateway-assistants-api-openapi.yml",
-    "ai-gateway-audio-api-openapi.yml",
-    "ai-gateway-batches-api-openapi.yml",
-    "ai-gateway-chat-api-openapi.yml",
-    "ai-gateway-completions-api-openapi.yml",
-    "ai-gateway-configs-api-openapi.yml",
-    "ai-gateway-embeddings-api-openapi.yml",
-    "ai-gateway-feedback-api-openapi.yml",
-    "ai-gateway-files-api-openapi.yml",
-    "ai-gateway-finetuning-api-openapi.yml",
-    "ai-gateway-guardrails-api-openapi.yml",
-    "ai-gateway-images-api-openapi.yml",
-    "ai-gateway-integrations-api-openapi.yml",
-    "ai-gateway-logs-api-openapi.yml",
-    "ai-gateway-mcp-api-openapi.yml",
-    "ai-gateway-policies-api-openapi.yml",
-    "ai-gateway-prompts-api-openapi.yml",
-    "ai-gateway-responses-api-openapi.yml",
-    "ai-gateway-threads-api-openapi.yml",
-    "ai-gateway-virtualkeys-api-openapi.yml",
-    "ai-gateway-workspaces-api-openapi.yml"
+    "_original/ai-gateway-openapi.yml"
   ],
   "outputs": [
-    "ai-gateway-analytics-api-openapi.yml",
     "ai-gateway-apikeys-api-openapi.yml",
+    "ai-gateway-analytics-api-openapi.yml",
     "ai-gateway-assistants-api-openapi.yml",
     "ai-gateway-audio-api-openapi.yml",
     "ai-gateway-batches-api-openapi.yml",
@@ -50,9 +28,40 @@
     "ai-gateway-virtualkeys-api-openapi.yml",
     "ai-gateway-workspaces-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 3 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ai-gateway-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: ai-gateway-api-keys-api-openapi.yml, ai-gateway-fine-tuning-api-openapi.yml, ai-gateway-virtual-keys-api-openapi.yml",
+    "apis.yml register: written (+3 apis, 38 total)"
+  ],
+  "skipped": [
+    "ai-gateway-analytics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-api-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-assistants-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-audio-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-batches-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-configs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-embeddings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-feedback-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-fine-tuning-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-guardrails-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-images-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-integrations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-logs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-mcp-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-prompts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-responses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-threads-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-virtual-keys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-workspaces-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Portkey AI Gateway Analytics Logs API
+  title: Portkey AI Gateway Logs API
   version: 1.0.0
   description: REST API for the Portkey AI Gateway, exposing OpenAI-compatible inference endpoints (chat, completions, embeddings, images, audio, files, batches, fine-tuning, assistants and threads, prompts, responses) plus admin endpoints for analytics, configs, API keys, integrations, providers, virtual keys, guardrails, policies, prompt management, workspaces, MCP, logs, and feedback. Selected as the canonical "AI gateway" exemplar for this index entry; the broader landscape is catalogued in apis.yml.
   contact:
@@ -23,6 +23,8 @@ paths:
       responses:
         '200':
           description: Logs accepted
+      operationId: postLogs
+      x-operation-id-source: derived
     get:
       tags:
       - Logs
@@ -30,6 +32,8 @@ paths:
       responses:
         '200':
           description: Logs
+      operationId: getLogs
+      x-operation-id-source: derived
   /logs/exports:
     post:
       tags:
@@ -38,6 +42,8 @@ paths:
       responses:
         '200':
           description: Export created
+      operationId: postLogsExports
+      x-operation-id-source: derived
 components:
   securitySchemes:
     PortkeyApiKey:
