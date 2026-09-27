@@ -65,7 +65,7 @@ apis:
   - Guardrails
   - Observability
   - Prompt Management
-  - Open-Source
+  - Open Source
   tags_raw:
   - AI Gateway
   - LLM Router
@@ -73,6 +73,7 @@ apis:
   - Observability
   - Prompt Management
   - Open Source
+  - Open-Source
   properties:
   - type: Portal
     url: https://portkey.ai/
@@ -123,7 +124,7 @@ apis:
   tags:
   - AI Gateway
   - LLM Proxy
-  - Open-Source
+  - Open Source
   - Cost Tracking
   - Load Balancing
   tags_raw:
@@ -132,6 +133,7 @@ apis:
   - Open Source
   - Cost Tracking
   - Load Balancing
+  - Open-Source
   properties:
   - type: Portal
     url: https://www.litellm.ai/
@@ -158,7 +160,7 @@ apis:
   - AI Gateway
   - Observability
   - Prompt Management
-  - Open-Source
+  - Open Source
   - Caching
   tags_raw:
   - AI Gateway
@@ -166,6 +168,7 @@ apis:
   - Prompt Management
   - Open Source
   - Caching
+  - Open-Source
   properties:
   - type: Portal
     url: https://www.helicone.ai/
@@ -246,7 +249,7 @@ apis:
   tags:
   - AI Gateway
   - API Gateway
-  - Open-Source
+  - Open Source
   - Apache
   - Plugins
   tags_raw:
@@ -255,6 +258,7 @@ apis:
   - Open Source
   - Apache
   - Plugin
+  - Open-Source
   properties:
   - type: Portal
     url: https://apisix.apache.org/
@@ -387,7 +391,7 @@ apis:
   - Inference
   - Ray
   - GPU
-  - Open-Source
+  - Open Source
   - Self-Hosted
   tags_raw:
   - Inference
@@ -395,6 +399,7 @@ apis:
   - GPU
   - Open Source
   - Self-Hosted
+  - Open-Source
   properties:
   - type: Portal
     url: https://www.anyscale.com/
@@ -441,13 +446,14 @@ apis:
   - Envoy
   - Kubernetes
   - CNCF
-  - Open-Source
+  - Open Source
   tags_raw:
   - AI Gateway
   - Envoy
   - Kubernetes
   - CNCF
   - Open Source
+  - Open-Source
   properties:
   - type: Portal
     url: https://aigateway.envoyproxy.io/
@@ -470,7 +476,7 @@ apis:
   humanURL: https://github.com/gentrace/gentrace
   tags:
   - AI Observability
-  - Open-Source
+  - Open Source
   - Archived
   - Evaluation
   tags_raw:
@@ -478,6 +484,7 @@ apis:
   - Open Source
   - Archived
   - Evaluation
+  - Open-Source
   properties:
   - type: GitHubRepository
     url: https://github.com/gentrace/gentrace
@@ -701,8 +708,6 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
-  - APIKeys
-  tags_raw:
   - API Keys
   properties:
   - type: OpenAPI
@@ -713,8 +718,6 @@ apis:
   humanURL: https://portkey.ai/
   baseURL: https://api.portkey.ai
   tags:
-  - Fine-Tuning
-  tags_raw:
   - Fine Tuning
   properties:
   - type: OpenAPI
