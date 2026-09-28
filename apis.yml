@@ -467,6 +467,66 @@ apis:
   - self-host
   - opensource
   x-license: Apache-2.0
+- aid: ai-gateway:gomodel
+  name: GoModel
+  description: >-
+    GoModel (ENTERPILOT) is an open-source AI gateway written in Go that fronts OpenAI, Anthropic, Gemini,
+    Groq, xAI, Ollama, vLLM, and other providers behind OpenAI-compatible and Anthropic-compatible APIs.
+    It adds virtual models with load balancing and failover, cost and usage tracking, budgets, scoped rate
+    limits, guardrails, audit logging, an MCP gateway, and an admin dashboard. Self-hosted as a single binary
+    or Docker image; MIT licensed.
+  humanURL: https://gomodel.enterpilot.io/
+  tags:
+  - AI Gateway
+  - LLM Proxy
+  - Multi-Provider
+  - Cost Tracking
+  - MCP Gateway
+  - Open Source
+  properties:
+  - type: Portal
+    url: https://gomodel.enterpilot.io/
+  - type: Documentation
+    url: https://gomodel.enterpilot.io/docs
+  - type: GitHubRepository
+    url: https://github.com/ENTERPILOT/GoModel
+  - type: GitHubOrganization
+    url: https://github.com/ENTERPILOT
+  x-deployment:
+  - self-host
+  - opensource
+  x-license: MIT
+- aid: ai-gateway:bifrost
+  name: Bifrost
+  description: >-
+    Bifrost (Maxim AI) is an open-source AI gateway written in Go that exposes 20+ providers, including OpenAI,
+    Anthropic, AWS Bedrock, and Google Vertex, through a single OpenAI-compatible API, with automatic fallbacks,
+    load balancing, semantic caching, virtual keys and budgets, MCP tool access, and Prometheus metrics and
+    tracing. Self-hosted via npx or Docker under Apache 2.0; clustering, adaptive load balancing, and
+    guardrails are part of the enterprise edition.
+  humanURL: https://www.getmaxim.ai/bifrost
+  tags:
+  - AI Gateway
+  - LLM Router
+  - Load Balancing
+  - Caching
+  - Observability
+  - Open Source
+  properties:
+  - type: Portal
+    url: https://www.getmaxim.ai/bifrost
+  - type: Documentation
+    url: https://docs.getbifrost.ai/overview
+  - type: GitHubRepository
+    url: https://github.com/maximhq/bifrost
+  - type: GitHubOrganization
+    url: https://github.com/maximhq
+  - type: APIEvangelistRepository
+    url: https://github.com/api-evangelist/bifrost
+  x-deployment:
+  - self-host
+  - opensource
+  x-license: Apache-2.0
 - aid: ai-gateway:gentrace
   name: Gentrace
   description: >-

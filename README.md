@@ -420,6 +420,55 @@ Envoy AI Gateway is an open-source extension to Envoy Proxy and Envoy Gateway, p
 - [Postman Collection](collections/ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
+### GoModel
+
+GoModel (ENTERPILOT) is an open-source AI gateway written in Go that fronts OpenAI, Anthropic, Gemini, Groq, xAI, Ollama, vLLM, and other providers behind OpenAI-compatible and Anthropic-compatible APIs. It adds virtual models with load balancing and failover, cost and usage tracking, budgets, scoped rate limits, guardrails, audit logging, an MCP gateway, and an admin dashboard. Self-hosted as a single binary or Docker image; MIT licensed.
+
+- **Human URL:** [https://gomodel.enterpilot.io/](https://gomodel.enterpilot.io/)
+
+#### Tags
+
+- AI Gateway
+- LLM Proxy
+- Multi-Provider
+- Cost Tracking
+- MCP Gateway
+- Open Source
+
+#### Properties
+
+- [Portal](https://gomodel.enterpilot.io/)
+- [Documentation](https://gomodel.enterpilot.io/docs)
+- [GitHub Repository](https://github.com/ENTERPILOT/GoModel)
+- [GitHub Organization](https://github.com/ENTERPILOT)
+- [Postman Collection](collections/ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### Bifrost
+
+Bifrost (Maxim AI) is an open-source AI gateway written in Go that exposes 20+ providers, including OpenAI, Anthropic, AWS Bedrock, and Google Vertex, through a single OpenAI-compatible API, with automatic fallbacks, load balancing, semantic caching, virtual keys and budgets, MCP tool access, and Prometheus metrics and tracing. Self-hosted via npx or Docker under Apache 2.0; clustering, adaptive load balancing, and guardrails are part of the enterprise edition.
+
+- **Human URL:** [https://www.getmaxim.ai/bifrost](https://www.getmaxim.ai/bifrost)
+
+#### Tags
+
+- AI Gateway
+- LLM Router
+- Load Balancing
+- Caching
+- Observability
+- Open Source
+
+#### Properties
+
+- [Portal](https://www.getmaxim.ai/bifrost)
+- [Documentation](https://docs.getbifrost.ai/overview)
+- [GitHub Repository](https://github.com/maximhq/bifrost)
+- [GitHub Organization](https://github.com/maximhq)
+- [API Evangelist Repository](https://github.com/api-evangelist/bifrost)
+- [Postman Collection](collections/ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
 ### Gentrace
 
 Gentrace was an AI evaluation and observability product; the company has shut down and its codebase is now MIT-licensed open source on GitHub. Included here for historical completeness in the AI gateway-adjacent observability category.
