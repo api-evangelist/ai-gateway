@@ -472,9 +472,9 @@ apis:
   description: >-
     GoModel (ENTERPILOT) is an open-source AI gateway written in Go that fronts OpenAI, Anthropic, Gemini,
     Groq, xAI, Ollama, vLLM, and other providers behind OpenAI-compatible and Anthropic-compatible APIs.
-    It adds virtual models with load balancing and failover, cost and usage tracking, budgets, scoped rate
-    limits, guardrails, audit logging, an MCP gateway, and an admin dashboard. Self-hosted as a single binary
-    or Docker image; MIT licensed.
+    It adds virtual models with load balancing and failover, cost and usage tracking, budgets, scoped
+    rate limits, guardrails, audit logging, an MCP gateway, and an admin dashboard. Self-hosted as a single
+    binary or Docker image; MIT licensed.
   humanURL: https://gomodel.enterpilot.io/
   tags:
   - AI Gateway
@@ -499,11 +499,11 @@ apis:
 - aid: ai-gateway:bifrost
   name: Bifrost
   description: >-
-    Bifrost (Maxim AI) is an open-source AI gateway written in Go that exposes 20+ providers, including OpenAI,
-    Anthropic, AWS Bedrock, and Google Vertex, through a single OpenAI-compatible API, with automatic fallbacks,
-    load balancing, semantic caching, virtual keys and budgets, MCP tool access, and Prometheus metrics and
-    tracing. Self-hosted via npx or Docker under Apache 2.0; clustering, adaptive load balancing, and
-    guardrails are part of the enterprise edition.
+    Bifrost (Maxim AI) is an open-source AI gateway written in Go that exposes 20+ providers, including
+    OpenAI, Anthropic, AWS Bedrock, and Google Vertex, through a single OpenAI-compatible API, with automatic
+    fallbacks, load balancing, semantic caching, virtual keys and budgets, MCP tool access, and Prometheus
+    metrics and tracing. Self-hosted via npx or Docker under Apache 2.0; clustering, adaptive load balancing,
+    and guardrails are part of the enterprise edition.
   humanURL: https://www.getmaxim.ai/bifrost
   tags:
   - AI Gateway

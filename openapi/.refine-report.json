@@ -37,7 +37,7 @@
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "ai-gateway-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "superseded outputs removed: ai-gateway-api-keys-api-openapi.yml, ai-gateway-fine-tuning-api-openapi.yml, ai-gateway-virtual-keys-api-openapi.yml",
-    "apis.yml register: written (+3 apis, 38 total)"
+    "apis.yml register: written (+3 apis, 40 total)"
   ],
   "skipped": [
     "ai-gateway-analytics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
