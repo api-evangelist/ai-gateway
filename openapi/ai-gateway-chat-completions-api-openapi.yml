@@ -13,12 +13,12 @@ security:
 - PortkeyApiKey: []
   PortkeyProvider: []
 tags:
-- name: Chat
+- name: Chat Completions
 paths:
   /chat/completions:
     post:
       tags:
-      - Chat
+      - Chat Completions
       summary: Create a chat completion
       responses:
         '200':
