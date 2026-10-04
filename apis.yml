@@ -527,6 +527,29 @@ apis:
   - self-host
   - opensource
   x-license: Apache-2.0
+- aid: ai-gateway:spillway
+  name: Spillway
+  description: >-
+    Spillway is an open-source AI gateway for small teams, written in TypeScript and self-hosted as one Docker
+    container with an admin UI and SQLite. It accepts OpenAI, Anthropic, and Ollama API formats and translates between
+    them, including streaming and tool calls. It adds keys per person, device, or agent with daily and monthly spend
+    limits, team budgets, four built-in routing rules (switch to a local model at a budget threshold, keep personal
+    data away from cloud models, rate-limit agents, keep off-hours traffic local), failover to a local model when a
+    provider fails, a request log with masked prompts, and OpenID Connect single sign-on. AGPL-3.0 licensed.
+  humanURL: https://github.com/Artemy-And/spillway
+  tags:
+  - AI Gateway
+  - LLM Proxy
+  - Cost Controls
+  - Model Routing
+  - Open Source
+  properties:
+  - type: GitHubRepository
+    url: https://github.com/Artemy-And/spillway
+  x-deployment:
+  - self-host
+  - opensource
+  x-license: AGPL-3.0-only
 - aid: ai-gateway:gentrace
   name: Gentrace
   description: >-
