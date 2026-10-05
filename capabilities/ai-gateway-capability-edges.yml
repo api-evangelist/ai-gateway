@@ -1,0 +1,36 @@
+slug: ai-gateway
+provider: AI Gateway
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Fine Tuning
+  spec_file: ai-gateway-fine-tuning-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.8
+  evidence: POST /fine_tuning/jobs  Create a fine-tuning job; GET /fine_tuning/jobs  List fine-tuning
+    jobs
+  reason: Operations create and track model fine-tuning jobs — ML model lifecycle / MLOps work, which
+    maps to Artificial Intelligence Management rather than any technical plumbing capability.
+- tag: Policies
+  spec_file: ai-gateway-policies-api-openapi.yml
+  capability_id: BC-4270.50
+  capability_id_l1: BC-4270
+  capability_name: API Consumption Governance
+  confidence: 0.7
+  evidence: POST /policies/rate-limits  Create a rate-limit policy; GET /policies/usage-limits  List usage-limit
+    policies
+  reason: Rate-limit and usage-limit policy management over API consumption matches API Consumption Governance
+    (quotas, rate limits, usage). Some chance this is purely internal throttling config rather than ecosystem
+    governance.
