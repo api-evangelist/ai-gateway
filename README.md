@@ -469,6 +469,27 @@ Bifrost (Maxim AI) is an open-source AI gateway written in Go that exposes 20+ p
 - [Postman Collection](collections/ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
 - [Open Collection](collections/ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
+### Spillway
+
+Spillway is an open-source, self-hosted AI gateway written in TypeScript, distributed as a single Docker container with an admin UI and SQLite storage. It accepts OpenAI, Anthropic, and Ollama request formats and translates between them, including streaming and tool calls. It issues a key per person, device, or agent with daily and monthly spend limits, supports team budgets and routing rules that can send traffic to a local model at a budget threshold, on provider failure, or outside working hours, masks personal data in its request log, and includes OpenID Connect single sign-on. Licensed AGPL-3.0-only; first released as v0.1.0 in October 2026.
+
+- **Human URL:** [https://github.com/Artemy-And/spillway](https://github.com/Artemy-And/spillway)
+
+#### Tags
+
+- AI Gateway
+- LLM Proxy
+- Cost Controls
+- Model Routing
+- Open Source
+
+#### Properties
+
+- [GitHub Repository](https://github.com/Artemy-And/spillway)
+- [Docker Image](https://github.com/Artemy-And/spillway/pkgs/container/spillway)
+- [Postman Collection](collections/ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
 ### Gentrace
 
 Gentrace was an AI evaluation and observability product; the company has shut down and its codebase is now MIT-licensed open source on GitHub. Included here for historical completeness in the AI gateway-adjacent observability category.

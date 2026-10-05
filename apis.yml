@@ -48,7 +48,7 @@ tags:
 - AI Governance
 - API Gateway
 created: '2026-05-22'
-modified: '2026-05-22'
+modified: '2026-10-05'
 specificationVersion: '0.23'
 apis:
 - aid: ai-gateway:portkey
@@ -527,6 +527,31 @@ apis:
   - self-host
   - opensource
   x-license: Apache-2.0
+- aid: ai-gateway:spillway
+  name: Spillway
+  description: >-
+    Spillway is an open-source, self-hosted AI gateway written in TypeScript, distributed as a single Docker
+    container with an admin UI and SQLite storage. It accepts OpenAI, Anthropic, and Ollama request formats and
+    translates between them, including streaming and tool calls. It issues a key per person, device, or agent with
+    daily and monthly spend limits, supports team budgets and routing rules that can send traffic to a local model
+    at a budget threshold, on provider failure, or outside working hours, masks personal data in its request log,
+    and includes OpenID Connect single sign-on. Licensed AGPL-3.0-only; first released as v0.1.0 in October 2026.
+  humanURL: https://github.com/Artemy-And/spillway
+  tags:
+  - AI Gateway
+  - LLM Proxy
+  - Cost Controls
+  - Model Routing
+  - Open Source
+  properties:
+  - type: GitHubRepository
+    url: https://github.com/Artemy-And/spillway
+  - type: DockerImage
+    url: https://github.com/Artemy-And/spillway/pkgs/container/spillway
+  x-deployment:
+  - self-host
+  - opensource
+  x-license: AGPL-3.0-only
 - aid: ai-gateway:gentrace
   name: Gentrace
   description: >-
@@ -908,3 +933,17 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-correction-request:
+  requested: '2026-10-05'
+  source:
+  - https://github.com/api-evangelist/ai-gateway/pull/7
+  request: Add Spillway (https://github.com/Artemy-And/spillway), an open-source self-hosted AI gateway, to the index.
+    Submitted by its author.
+  ledger:
+  - ai-gateway-698c306c
+  applied: '2026-10-05'
+  applied_note: Added by hand after verifying the repository on 2026-10-05 - public, not archived, TypeScript,
+    AGPL-3.0-only (LICENSE and package.json), created 2026-10-02, 14 commits, release v0.1.0, signed container image
+    on ghcr.io, README documenting OpenAI, Anthropic and Ollama request formats, per-key spend limits, budget and
+    failover routing to a local model, and OIDC SSO. Description rewritten neutrally from the README, with no
+    comparisons to other gateways; DockerImage property added. The PR was not merged.
