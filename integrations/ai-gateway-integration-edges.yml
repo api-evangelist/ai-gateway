@@ -1,0 +1,23 @@
+edges:
+- partner_name: OpenAI
+  partner: openai
+  partner_match: domain
+  type: contract
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  evidence: https://github.com/api-evangelist/ai-gateway/blob/main/openapi/ai-gateway-chat-completions-api-openapi.yml#L5
+  contract_reference:
+    repo: ai-gateway
+    spec_file: ai-gateway-chat-completions-api-openapi.yml
+    property: description
+    value: OpenAI-compatible
+    note: 'ai-gateway declares OpenAI compatibility: ''description: REST API for the Portkey AI Gateway, exposing
+      OpenAI-compatible inference endpoints (chat, completions, embeddings, images, audio, files, batches, '''
+    detected_by: sweep-model-routing.py
+    detected: '2026-10-13'
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched
+checked: []
