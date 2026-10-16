@@ -15,7 +15,7 @@ edges:
     note: 'ai-gateway declares OpenAI compatibility: ''description: REST API for the Portkey AI Gateway, exposing
       OpenAI-compatible inference endpoints (chat, completions, embeddings, images, audio, files, batches, '''
     detected_by: sweep-model-routing.py
-    detected: '2026-10-13'
+    detected: '2026-10-15'
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
 generated: '2026-10-13'
