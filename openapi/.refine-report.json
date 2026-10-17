@@ -29,15 +29,15 @@
     "ai-gateway-workspaces-api-openapi.yml"
   ],
   "archived": [
-    "deleted 3 superseded output(s) from the previous generation"
+    "deleted 4 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "ai-gateway-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "superseded outputs removed: ai-gateway-api-keys-api-openapi.yml, ai-gateway-fine-tuning-api-openapi.yml, ai-gateway-virtual-keys-api-openapi.yml",
-    "apis.yml register: written (+3 apis, 40 total)"
+    "superseded outputs removed: ai-gateway-api-keys-api-openapi.yml, ai-gateway-chat-completions-api-openapi.yml, ai-gateway-fine-tuning-api-openapi.yml, ai-gateway-virtual-keys-api-openapi.yml",
+    "apis.yml register: written (+4 apis, 41 total)"
   ],
   "skipped": [
     "ai-gateway-analytics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -45,7 +45,7 @@
     "ai-gateway-assistants-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "ai-gateway-audio-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "ai-gateway-batches-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "ai-gateway-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ai-gateway-chat-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "ai-gateway-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "ai-gateway-configs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "ai-gateway-embeddings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
